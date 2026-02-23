@@ -220,32 +220,9 @@
 <button onclick="scrollToTop()" id="scrollTop" class="scroll-top" title="Наверх">
     <i class="fas fa-arrow-up"></i>
 </button>
-
-<script>
-    const burger = document.getElementById('burger');
-    const navOverlay = document.querySelector('.nav-overlay');
-    const menuClose = document.querySelector('.menu-close');
-
-    if (burger && navOverlay) {
-        burger.addEventListener('click', () => {
-            navOverlay.classList.toggle('nav-active');
-            burger.classList.toggle('toggle');
-        });
-
-        if (menuClose) {
-            menuClose.addEventListener('click', () => {
-                navOverlay.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-            });
-        }
-
-        navOverlay.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navOverlay.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-            });
-        });
-    }
-</script>
+    <!-- В самом низу, перед </body> -->
+    <script src="sites-data.js"></script>
+    <script src="script.js"></script>
+    <!-- Никаких других скриптов! -->
 </body>
 </html>

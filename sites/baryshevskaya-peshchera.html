@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Воронежский заповедник | Зелёная карта</title>
+    <title>Барсуковская пещера | Зелёная карта</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -37,27 +42,30 @@
 
     <section class="detail-header">
         <div class="container">
-            <h1 style="color: white;">Воронежский заповедник</h1>
-            <p style="font-size: 1.2rem;">Заповедник • Усманский район</p>
+            <h1 style="color: white;">Барсуковская пещера</h1>
+            <p style="font-size: 1.2rem;">Памятник природы • Становлянский район</p>
         </div>
     </section>
 
     <section class="detail-page">
         <div class="container">
             <div class="detail-content">
+                <!-- Левая колонка с описанием -->
                 <div class="detail-info fade-in">
-                    <h2>О Воронежском заповеднике</h2>
-                    <p>Воронежский государственный природный заповедник расположен на границе Воронежской и Липецкой областей. Основан в 1923 году для сохранения речного бобра. Здесь находится знаменитый бобровый питомник.</p>
-                    <p>Территория покрыта сосновыми борами, дубравами, ольшаниками. Возраст некоторых деревьев достигает 200 лет.</p>
-                    <p>Флора насчитывает более 1000 видов растений. Фауна: лоси, кабаны, олени, волки, рыси, бобры, выдры.</p>
-                    <p>На территории Липецкой области находится Усманский участок заповедника.</p>
+                    <h2>О Барсуковской пещере</h2>
+                    <div style="white-space: pre-line;">
+                        <p>Барсуковская пещера — самая протяженная пещера Липецкой области. Представляет собой систему искусственных ходов, вырубленных в известняке для добычи камня в XVIII-XIX веках.</p>
+                        <p>Общая длина ходов превышает 200 метров. Высота гротов достигает 3 метров. В пещере обитают летучие мыши, здесь зимуют несколько видов рукокрылых.</p>
+                        <p>Пещера интересна для спелеологов и любителей подземных достопримечательностей. Это уникальный памятник горного дела региона.</p>
+                        <p>Температура внутри пещеры постоянная — около +6°C круглый год, поэтому здесь образовался особый микроклимат.</p>
+                    </div>
 
                     <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span class="activity-tag">Спелеотуризм</span>
                         <span class="activity-tag">Экскурсии</span>
-                        <span class="activity-tag">Бобровый питомник</span>
-                        <span class="activity-tag">Экотропы</span>
-                        <span class="activity-tag">Музей природы</span>
+                        <span class="activity-tag">Фотосъемка</span>
+                        <span class="activity-tag">Наблюдение за летучими мышами</span>
                     </div>
 
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
@@ -68,24 +76,45 @@
                     </div>
                 </div>
 
+                <!-- Правая колонка с деталями -->
                 <div class="detail-sidebar fade-in">
                     <h3 style="margin-bottom: 20px;">Детали</h3>
                     <ul style="list-style: none;">
-                        <li style="margin-bottom: 15px;"><i class="fas fa-map-pin"></i> <strong>Район:</strong> Усманский район</li>
-                        <li style="margin-bottom: 15px;"><i class="fas fa-ruler"></i> <strong>Площадь:</strong> 31053 га (всего)</li>
-                        <li style="margin-bottom: 15px;"><i class="fas fa-calendar"></i> <strong>Основан:</strong> 1923</li>
-                        <li style="margin-bottom: 15px;"><i class="fas fa-leaf"></i> <strong>Статус:</strong> ООПТ федерального значения</li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-map-pin" style="color: var(--primary-green); width: 25px;"></i>
+                            <strong>Район:</strong> Становлянский район
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-ruler" style="color: var(--primary-green); width: 25px;"></i>
+                            <strong>Площадь:</strong> 0.5 га
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-calendar" style="color: var(--primary-green); width: 25px;"></i>
+                            <strong>Основан:</strong> XVIII век
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-leaf" style="color: var(--primary-green); width: 25px;"></i>
+                            <strong>Статус:</strong> Памятник природы регионального значения
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-thermometer-half" style="color: var(--primary-green); width: 25px;"></i>
+                            <strong>Температура:</strong> +6°C круглый год
+                        </li>
                     </ul>
 
                     <hr style="margin: 30px 0; opacity: 0.2;">
 
                     <h3 style="margin-bottom: 20px;">Редкие виды</h3>
-                    <p>Бобр, выдра, орлан-белохвост, черный аист, зубянка</p>
+                    <p>Летучие мыши (ночницы, ушаны), многолетние грибницы, эндемичные насекомые</p>
 
                     <hr style="margin: 30px 0; opacity: 0.2;">
 
                     <h3 style="margin-bottom: 20px;">Как добраться</h3>
-                    <p>Через город Усмань, далее по указателям. Координаты центральной усадьбы: 51.9167, 39.3500</p>
+                    <p>У села Барсуково Становлянского района. Координаты входа: 52.7833, 38.2167. Для посещения рекомендуется иметь фонарик и теплую одежду, так как в пещере прохладно.</p>
+
+                    <div style="background: white; border-radius: 10px; padding: 15px; margin-top: 20px;">
+                        <p><strong>⚠️ Важно:</strong> Посещение пещеры требует осторожности. Рекомендуется идти с проводником и иметь снаряжение.</p>
+                    </div>
 
                     <div style="margin-top: 30px;">
                         <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
@@ -97,6 +126,7 @@
         </div>
     </section>
 
+    <!-- Футер -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -140,16 +170,17 @@
                     </div>
                 </div>
             </div>
-        <div class="footer-bottom">
+            <div class="footer-bottom">
                 <p>© 2026 Зелёная карта Липецкой области. Все права защищены.</p>
             </div>
         </div>
-</footer>
-        <!-- Подключаем основные скрипты -->
+    </footer>
+
+    <!-- Подключаем основные скрипты -->
     <script src="../sites-data.js"></script>
     <script src="../script.js"></script>
 
-    <!-- Маленький скрипт только для меню -->
+    <!-- Скрипт для меню -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.getElementById('burger');

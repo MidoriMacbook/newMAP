@@ -162,23 +162,37 @@
         </div>
     </div>
 </footer>
+        <!-- Подключаем основные скрипты -->
+    <script src="../sites-data.js"></script>
+    <script src="../script.js"></script>
+
+    <!-- Маленький скрипт только для меню -->
     <script>
-        const burger = document.getElementById('burger');
-        const navOverlay = document.querySelector('.nav-overlay');
-        const menuClose = document.querySelector('.menu-close');
-            burger.addEventListener('click', () => {
-                navOverlay.classList.toggle('nav-active');
-                burger.classList.toggle('toggle');
-            });
-            navOverlay.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navOverlay.classList.remove('nav-active');
-                    burger.classList.remove('toggle');
-            });
-            menuClose.addEventListener('click', () => {
-                navOverlay.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-            });
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.getElementById('burger');
+            const navOverlay = document.querySelector('.nav-overlay');
+            const menuClose = document.querySelector('.menu-close');
+
+            if (burger && navOverlay) {
+                burger.addEventListener('click', function() {
+                    navOverlay.classList.toggle('nav-active');
+                    burger.classList.toggle('toggle');
+                });
+
+                if (menuClose) {
+                    menuClose.addEventListener('click', function() {
+                        navOverlay.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                    });
+                }
+
+                navOverlay.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navOverlay.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                    });
+                });
+            }
         });
     </script>
 </body>
