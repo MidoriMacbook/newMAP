@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initMap() {
+        const mapElement = document.getElementById('leaflet-map');
+        if (!mapElement) return;
+
         var map = L.map('leaflet-map').setView([52.6, 39.6], 9);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,20 +26,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }).addTo(map);
 
         // Загружаем данные из глобальной переменной sitesDatabase
-        if (typeof sitesDatabase !== 'undefined') {
+        if (typeof sitesDatabase !== 'undefined' && sitesDatabase.length) {
             addMarkers(map, sitesDatabase);
-        } else {
-            console.error('sitesDatabase не найден');
         }
 
-        // Добавляем обработчик изменения размера окна для карты
+        // Исправление для корректного отображения на мобильных
+        setTimeout(() => map.invalidateSize(), 200);
+
         window.addEventListener('resize', () => {
-            setTimeout(() => map.invalidateSize(), 200);
+            setTimeout(() => map.invalidateSize(), 100);
         });
     }
 
     function addMarkers(map, sites) {
         sites.forEach(site => {
+            if (!site.coords) return;
+
             const marker = L.marker(site.coords, {
                 icon: createCustomIcon(site.type),
                 riseOnHover: true
@@ -46,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div style="text-align: center;">
                     <div class="popup-title">${site.name}</div>
                     <div class="popup-type">${site.category || site.type}</div>
-                    <p style="margin: 10px 0;">${site.description}</p>
+                    <p style="margin: 10px 0;">${site.description.substring(0, 100)}...</p>
                     <button onclick="window.location.href='sites/${site.id}.html'" class="popup-btn">
                         <i class="fas fa-info-circle"></i> Подробнее
                     </button>
@@ -65,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>${site.name}</h3>
                         <p><strong>Тип:</strong> ${site.category || site.type}</p>
                         <p>${site.fullDescription ? site.fullDescription.substring(0, 150) + '...' : site.description}</p>
-                        <button onclick="window.location.href='sites/${site.id}.html'" class="btn btn-primary" style="margin-top: 15px;">
+                        <button onclick="window.location.href='sites/${site.id}.html'" class="btn btn-primary" style="margin-top: 15px; width: 100%;">
                             Перейти к полной информации →
                         </button>
                     `;
@@ -84,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'археологический': '#cddc39'
         };
 
-        const color = colors[type] || '#2e7d32';
+        const color = colors[type?.toLowerCase()] || '#2e7d32';
 
         return L.divIcon({
             className: 'custom-marker',
@@ -234,4 +239,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 20);
         });
     }
-});
+
+    // ========== КНОПКА "НАВЕРХ" ==========
+    window.onscroll = function() {
+        const btn = document.getElementById('scrollTop');
+        if (btn) {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        }
+    };
+
+    window.scrollToTop = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+}); // <-- Это правильная закрывающая скобка для DOMContentLoaded
