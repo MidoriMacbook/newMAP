@@ -1101,6 +1101,11 @@ h2:hover::after {
         text-align: left;
         width: 100%;
     }
+    #leaflet-map {
+        height: 500px;
+        width: 100%;
+        z-index: 1;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1155,9 +1160,7 @@ h2:hover::after {
         transition: width var(--transition-base);
     }
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-        width: 120px;
-    }
+    .nav-links a.active::after { width: 120px; }
     .menu-close {
         display: block;
         font-size: 3rem;
@@ -1166,9 +1169,7 @@ h2:hover::after {
         transition: transform 0.3s ease;
     }
     .nav-links a:hover,
-    .nav-links a.active {
-        color: var(--accent-green);
-    }
+    .nav-links a.active { color: var(--accent-green); }
     .navbar .burger {
         display: flex;
         z-index: 3000;
@@ -1206,21 +1207,61 @@ h2:hover::after {
     .footer-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 30px;
         align-items: start;
     }
-    .footer-section {
-        text-align: left;
-    }
+    .footer-section { text-align: left; }
+    .services-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 500px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
+    .stats-grid { grid-template-columns: 1fr; }
     .search-box { max-width: 160px; }
     .search-box input { width: 160px; }
     .search-box input:focus { width: 160px; }
+    .footer { padding: 30px 0 15px 5px; }
+}
+
+@media (max-width: 400px) {
+    .search-box { max-width: 130px; }
+    .search-box input { width: 130px; }
+    .search-box input:focus { width: 130px; }
+    .logo-text { font-size: 0.9rem; }
+    .logo-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
+    }
+    .footer-section h4 { font-size: 0.9rem; }
+    .footer-section p { font-size: 0.85rem; }
+    .nav-links-footer { font-size: 0.85rem; }
+    .footer { padding: 30px 0 10px 0; }
+    .contact-item ul { font-size: 0.85rem; }
+    #leaflet-map {
+        height: 450px;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 1010px) and (max-width: 1350px) {
+    .services-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-height: 600px) {
+    #leaflet-map {
+        height: 350px;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+@media (max-height: 800px) {
+    #leaflet-map {
+        height: 450px;
+        width: 100%;
+        z-index: 1;
+    }
 }
 
 /* ========== ЗАГРУЗЧИК (PRELOADER) ========== */
