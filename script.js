@@ -255,5 +255,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollToTop = function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-
 }); // <-- Это правильная закрывающая скобка для DOMContentLoaded

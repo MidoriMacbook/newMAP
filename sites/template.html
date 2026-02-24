@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>НАЗВАНИЕ | Зелёная карта</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-leaf"></i></div>
+                <span class="logo-text">Зелёная карта</span>
+            </div>
+            <div class="nav-overlay">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html#map">Карта</a></li>
+                    <li><a href="../about.html">О проекте</a></li>
+                    <li><a href="../all-sites.html">Все места</a></li>
+                </ul>
+                <div class="menu-close">&times;</div>
+            </div>
+            <div class="search-box">
+                <label for="search-input"></label><input type="text" id="search-input" placeholder="Поиск...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div id="burger" class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="detail-header">
+        <div class="container">
+            <h1 style="color: white;">НАЗВАНИЕ</h1>
+            <p style="font-size: 1.2rem;">КАТЕГОРИЯ • РАЙОН</p>
+        </div>
+    </section>
+
+    <section class="detail-page">
+        <div class="container">
+            <div class="detail-content">
+                <!-- Левая колонка с описанием -->
+                <div class="detail-info fade-in">
+                    <h2>О названии</h2>
+                    <div style="white-space: pre-line;">
+                        <p>ОПИСАНИЕ МЕСТА. Здесь нужно написать подробный текст о достопримечательности.</p>
+                        <p>Можно добавить несколько абзацев с интересными фактами.</p>
+                    </div>
+
+                    <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <span class="activity-tag">Занятие 1</span>
+                        <span class="activity-tag">Занятие 2</span>
+                        <span class="activity-tag">Занятие 3</span>
+                    </div>
+
+                    <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
+                    <div class="detail-gallery">
+                        <div class="gallery-item"><i class="fas fa-image fa-3x"></i></div>
+                        <div class="gallery-item"><i class="fas fa-image fa-3x"></i></div>
+                        <div class="gallery-item"><i class="fas fa-image fa-3x"></i></div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка с деталями -->
+                <div class="detail-sidebar fade-in">
+                    <h3 style="margin-bottom: 20px;">Детали</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-map-pin" style="color: var(--primary-green);"></i>
+                            <strong>Район:</strong> РАЙОН
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-ruler" style="color: var(--primary-green);"></i>
+                            <strong>Площадь:</strong> ПЛОЩАДЬ
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-calendar" style="color: var(--primary-green);"></i>
+                            <strong>Основан:</strong> ГОД
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <i class="fas fa-leaf" style="color: var(--primary-green);"></i>
+                            <strong>Статус:</strong> СТАТУС
+                        </li>
+                    </ul>
+
+                    <hr style="margin: 30px 0; opacity: 0.2;">
+
+                    <h3 style="margin-bottom: 20px;">Редкие виды</h3>
+                    <p>ОПИСАНИЕ РЕДКИХ ВИДОВ</p>
+
+                    <hr style="margin: 30px 0; opacity: 0.2;">
+
+                    <h3 style="margin-bottom: 20px;">Как добраться</h3>
+                    <p>МАРШРУТ И КООРДИНАТЫ</p>
+
+                    <div style="margin-top: 30px;">
+                        <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
+                            <i class="fas fa-arrow-left"></i> Назад
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Зелёная карта</h4>
+                    <p>Интерактивный путеводитель по особо охраняемым природным территориям Липецкой области.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul class="nav-links-footer">
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="../index.html#map">Карта</a></li>
+                        <li><a href="../about.html">О проекте</a></li>
+                        <li><a href="../all-sites.html">Все места</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <div class="contact-group">
+                        <!-- Здесь контакты как на главной -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Зелёная карта Липецкой области. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../sites-data.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.getElementById('burger');
+            const navOverlay = document.querySelector('.nav-overlay');
+            const menuClose = document.querySelector('.menu-close');
+
+            if (burger && navOverlay) {
+                burger.addEventListener('click', function() {
+                    navOverlay.classList.toggle('nav-active');
+                    burger.classList.toggle('toggle');
+                });
+
+                if (menuClose) {
+                    menuClose.addEventListener('click', function() {
+                        navOverlay.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                    });
+                }
+
+                navOverlay.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navOverlay.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
