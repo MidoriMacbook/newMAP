@@ -1628,3 +1628,11 @@ h2:hover::after {
         font-size: 1.5rem;
     }
 }
+
+.album {
+    height: 150px;
+}
+
+.review {
+    height: 200px;
+}
