@@ -23,6 +23,7 @@ const sitesDatabase = [
     },
     {
         id: 'voronezhsky-zapovednik',
+        image: 'img/voronezhskyzapovednik4.jpeg',
         name: 'Воронежский заповедник',
         shortName: 'Воронежский заповедник',
         coords: [51.9167, 39.3500],
@@ -43,6 +44,7 @@ const sitesDatabase = [
     // ========== ПАМЯТНИКИ ПРИРОДЫ (15) ==========
     {
         id: 'vorgolskie-skaly',
+        image: 'img/vorgolskieskaly1.jpg',
         name: 'Воргольские скалы',
         shortName: 'Воргольские скалы',
         coords: [52.5667, 38.3167],
@@ -61,6 +63,7 @@ const sitesDatabase = [
     },
     {
         id: 'baryshevskaya-peshchera',
+        image: 'img/baryshevskayapeshchera2.jpg',
         name: 'Барсуковская пещера',
         shortName: 'Барсуковская пещера',
         coords: [52.7833, 38.2167],
@@ -79,6 +82,7 @@ const sitesDatabase = [
     },
     {
         id: 'voronov-kamen',
+        image: 'img/voronovkamen4.jpg',
         name: 'Воронов Камень',
         shortName: 'Воронов Камень',
         coords: [52.5833, 38.9167],
@@ -97,6 +101,7 @@ const sitesDatabase = [
     },
     {
         id: 'morozova-gora',
+        image: 'img/morozovagora4.jpg',
         name: 'Морозова Гора',
         shortName: 'Морозова Гора',
         coords: [52.5667, 38.9000],
@@ -115,6 +120,7 @@ const sitesDatabase = [
     },
     {
         id: 'bykova-sheya',
+        image: 'img/bykovasheya1.jpg',
         name: 'Быкова Шея',
         shortName: 'Быкова Шея',
         coords: [52.5500, 38.8833],
@@ -133,6 +139,7 @@ const sitesDatabase = [
     },
     {
         id: 'plyushchan',
+        image: 'img/plyushchan3.jpg',
         name: 'Плющань',
         shortName: 'Плющань',
         coords: [52.5167, 38.8500],
@@ -151,6 +158,7 @@ const sitesDatabase = [
     },
     {
         id: 'melovye-skaly',
+        image: 'img/melovyeskaly4.jpg',
         name: 'Меловые скалы',
         shortName: 'Меловые скалы',
         coords: [52.8167, 38.3333],
@@ -169,6 +177,7 @@ const sitesDatabase = [
     },
     {
         id: 'andreevskoe-ozero',
+        image: 'img/andreevskoeozero1.png',
         name: 'Андреевское озеро',
         shortName: 'Андреевское озеро',
         coords: [52.5500, 39.4167],
@@ -187,6 +196,7 @@ const sitesDatabase = [
     },
     {
         id: 'karstovye-voronki',
+        image: 'img/karstovyevoronki4.jpg',
         name: 'Карстовые воронки Конь-Камень',
         shortName: 'Конь-Камень',
         coords: [52.9333, 38.4667],
@@ -205,6 +215,7 @@ const sitesDatabase = [
     },
     {
         id: 'lipetskoe-ozero',
+        image: 'img/lipetskoeozero2.jpg',
         name: 'Липецкое озеро',
         shortName: 'Липецкое озеро',
         coords: [52.6167, 39.6000],
@@ -223,6 +234,7 @@ const sitesDatabase = [
     },
     {
         id: 'matyrskoe-vodohranilische',
+        image: 'img/matyrskoevodohranilische3.jpg',
         name: 'Матырское водохранилище',
         shortName: 'Матырское водохранилище',
         coords: [52.5333, 39.7500],
@@ -241,6 +253,7 @@ const sitesDatabase = [
     },
     {
         id: 'dolina-reki-voronezh',
+        image: 'img/dolinarekivoronezh3.jpg',
         name: 'Долина реки Воронеж',
         shortName: 'Долина Воронежа',
         coords: [52.6167, 39.5000],
