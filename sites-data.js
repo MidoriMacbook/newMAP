@@ -4,6 +4,7 @@ const sitesDatabase = [
     // ========== ЗАПОВЕДНИКИ (2) ==========
     {
         id: 'galichya-gora',
+        image: 'img/galichyagora4.jpg',
         name: 'Галичья Гора',
         shortName: 'Галичья Гора',
         coords: [52.6012, 38.9285],

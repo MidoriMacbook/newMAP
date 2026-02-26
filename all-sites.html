@@ -135,7 +135,10 @@
                 grid.innerHTML = sitesDatabase.map(site => `
                     <div class="site-card" data-type="${site.type}">
                         <div class="site-card-image">
-                            <i class="fas fa-image fa-4x"></i>
+                            ${site.image 
+                            ? `<img src="${site.image}" alt="${site.name}">`
+                            : `<i class="fas fa-image fa-4x"></i>`
+                        }
                         </div>
                         <div class="site-card-content">
                             <span class="site-card-category">${site.category || site.type}</span>
