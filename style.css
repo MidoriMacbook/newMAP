@@ -1636,3 +1636,232 @@ h2:hover::after {
     height: 100%;
     object-fit: cover;
 }
+/* ========== ИСПРАВЛЕНИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ========== */
+
+@media (max-width: 768px) {
+    /* Исправляем страницу "О проекте" */
+    .mission .container {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .mission .container > div:first-child {
+        order: 1;
+        padding: 0 15px;
+    }
+
+    .mission .stats-block {
+        order: 2;
+        margin: 20px 15px 0 !important;
+        padding: 25px 15px !important;
+        width: auto !important;
+    }
+
+    .mission .stats-block h3 {
+        font-size: 1.8rem !important;
+    }
+
+    .mission .stats-block p {
+        font-size: 1rem !important;
+    }
+
+    /* Исправляем карточки команды */
+    .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 15px;
+    }
+
+    .team-card {
+        margin-bottom: 10px;
+        padding: 20px 15px !important;
+    }
+
+    .team-avatar {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .team-avatar i {
+        font-size: 2rem !important;
+    }
+
+    .team-card h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 5px;
+    }
+
+    .team-role {
+        font-size: 0.9rem !important;
+    }
+
+    .team-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.4;
+    }
+
+    /* Исправляем страницу "Все места" */
+    .filter-buttons {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding: 5px 15px 15px !important;
+        -webkit-overflow-scrolling: touch;
+        gap: 8px !important;
+        justify-content: flex-start !important;
+    }
+
+    .filter-btn {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        padding: 8px 16px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .sites-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 15px;
+    }
+
+    .site-card {
+        margin-bottom: 10px;
+    }
+
+    .site-card-content {
+        padding: 15px !important;
+    }
+
+    .site-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .site-card-region {
+        font-size: 0.85rem !important;
+    }
+
+    .site-card-description {
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .site-card-actions {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .site-card-actions .btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 10px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Исправляем подвал */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+        text-align: center !important;
+    }
+
+    .footer-section {
+        text-align: center !important;
+        padding: 0 15px;
+    }
+
+    .footer-section h4::after {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .nav-links-footer {
+        align-items: center !important;
+    }
+
+    .contact-group {
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: center !important;
+    }
+
+    .contact-item {
+        align-items: center !important;
+    }
+
+    .contact-item ul {
+        align-items: center !important;
+    }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .mission h2 {
+        font-size: 1.6rem !important;
+    }
+
+    .mission p, .mission li {
+        font-size: 0.95rem !important;
+    }
+
+    .stats-block h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .team-avatar {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .team-avatar i {
+        font-size: 1.8rem !important;
+    }
+
+    .team-card h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .site-card-category {
+        font-size: 0.75rem !important;
+    }
+}
+/* ========== ИСПРАВЛЕНИЕ ЗАГОЛОВКА "ВСЕ ДОСТОПРИМЕЧАТЕЛЬНОСТИ" ========== */
+
+/* Для экранов до 768px */
+@media (max-width: 768px) {
+    /* Заголовок на странице all-sites.html */
+    .detail-header h1 {
+        font-size: 2rem !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        padding: 0 10px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Подзаголовок */
+    .detail-header p {
+        font-size: 1rem !important;
+        padding: 0 15px !important;
+        word-break: break-word !important;
+    }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .detail-header h1 {
+        font-size: 1.5rem !important;
+        padding: 0 5px !important;
+    }
+
+    .detail-header p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Для экранов до 360px (самые маленькие телефоны) */
+@media (max-width: 360px) {
+    .detail-header h1 {
+        font-size: 1.3rem !important;
+    }
+}
+#sites-count::after {
+    content: '+';
+}
