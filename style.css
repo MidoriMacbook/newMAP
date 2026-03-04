@@ -1862,6 +1862,3 @@ h2:hover::after {
         font-size: 1.3rem !important;
     }
 }
-#sites-count::after {
-    content: '+';
-}
