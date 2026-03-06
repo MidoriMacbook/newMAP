@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ========== ИНИЦИАЛИЗАЦИЯ КАРТЫ ==========
+    // Инициализация карты
     if (document.getElementById('leaflet-map')) {
         initMap();
     }
@@ -39,57 +39,109 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function addMarkers(map, sites) {
+
         sites.forEach(site => {
-            if (!site.coords) return;
+            if (!site.coords) {
+                console.warn('Нет координат у:', site.name);
+                return;
+            }
 
-            const marker = L.marker(site.coords, {
-                icon: createCustomIcon(site.type),
-                riseOnHover: true
-            }).addTo(map);
+            try {
+                const marker = L.marker(site.coords, {
+                    icon: createCustomIcon(site.type),
+                    riseOnHover: true
+                }).addTo(map);
 
-            const popupContent = `
-                <div style="text-align: center;">
-                    <div class="popup-title">${site.name}</div>
-                    <div class="popup-type">${site.category || site.type}</div>
-                    <p style="margin: 10px 0;">${site.description.substring(0, 100)}...</p>
-                    <button onclick="window.location.href='sites/${site.id}.html'" class="popup-btn">
-                        <i class="fas fa-info-circle"></i> Подробнее
-                    </button>
-                </div>
-            `;
-
-            marker.bindPopup(popupContent, {
-                maxWidth: 300,
-                minWidth: 250
-            });
-
-            marker.on('click', function() {
-                const quickInfo = document.getElementById('quick-info');
-                if (quickInfo) {
-                    quickInfo.innerHTML = `
-                        <h3>${site.name}</h3>
-                        <p><strong>Тип:</strong> ${site.category || site.type}</p>
-                        <p>${site.fullDescription ? site.fullDescription.substring(0, 150) + '...' : site.description}</p>
-                        <button onclick="window.location.href='sites/${site.id}.html'" class="btn btn-primary" style="margin-top: 15px; width: 100%;">
-                            Перейти к полной информации →
+                const popupContent = `
+                    <div style="text-align: center;">
+                        <div class="popup-title">${site.name}</div>
+                        <div class="popup-type">${site.category || site.type}</div>
+                        <p style="margin: 10px 0;">${site.description.substring(0, 100)}...</p>
+                        <button onclick="window.location.href='sites/${site.id}.html'" class="popup-btn">
+                            <i class="fas fa-info-circle"></i> Подробнее
                         </button>
-                    `;
-                }
-            });
+                    </div>
+                `;
+
+                marker.bindPopup(popupContent, {
+                    maxWidth: 300,
+                    minWidth: 250
+                });
+
+                marker.on('click', function() {
+                    const quickInfo = document.getElementById('quick-info');
+                    if (quickInfo) {
+                        quickInfo.innerHTML = `
+                            <h3>${site.name}</h3>
+                            <p><strong>Тип:</strong> ${site.category || site.type}</p>
+                            <p>${site.fullDescription ? site.fullDescription.substring(0, 150) + '...' : site.description}</p>
+                            <button onclick="window.location.href='sites/${site.id}.html'" class="btn btn-primary" style="margin-top: 15px; width: 100%;">
+                                Перейти к полной информации →
+                            </button>
+                        `;
+                    }
+                });
+
+            } catch (error) {
+                console.error('Ошибка при добавлении маркера для', site.name, error);
+            }
         });
     }
-
     function createCustomIcon(type) {
         const colors = {
-            'заповедник': '#2e7d32',
-            'памятник природы': '#4caf50',
-            'природный парк': '#81c784',
-            'духовный центр': '#1b5e20',
-            'усадьба': '#8bc34a',
-            'археологический': '#cddc39'
+            // Заповедники и ООПТ
+            'заповедник': '#2e7d32',           // тёмно-зелёный
+            'памятник природы': '#4caf50',      // зелёный
+            'природный парк': '#81c784',        // светло-зелёный
+            'заказник': '#66bb6a',              // средне-зелёный
+
+            // Водные объекты
+            'водный': '#0288d1',                 // синий
+            'водный объект': '#0288d1',          // синий
+            'река': '#0288d1',                    // синий
+            'озеро': '#0288d1',                    // синий
+            'водохранилище': '#0288d1',           // синий
+
+            // Духовные центры
+            'духовный центр': '#1b5e20',          // тёмно-зелёный
+            'духовный': '#1b5e20',                 // тёмно-зелёный
+            'монастырь': '#1b5e20',                 // тёмно-зелёный
+            'храм': '#1b5e20',                      // тёмно-зелёный
+            'святые места': '#1b5e20',              // тёмно-зелёный
+
+            // Усадьбы
+            'усадьба': '#8bc34a',                  // салатовый
+            'историческая усадьба': '#8bc34a',     // салатовый
+
+            // Археология
+            'археологический': '#cddc39',          // жёлто-зелёный
+            'археологический памятник': '#cddc39', // жёлто-зелёный
+
+            // Лесные массивы
+            'лесной': '#388e3c',                    // зелёный
+            'лесной массив': '#388e3c',              // зелёный
+
+            // Геологические объекты
+            'геологический': '#ff9800',              // оранжевый
+            'геологический объект': '#ff9800',       // оранжевый
+            'карстовый': '#ff9800',                   // оранжевый
+
+            // Исторические памятники
+            'исторический': '#9c27b0',                // фиолетовый
+            'памятник инженерии': '#9c27b0',          // фиолетовый
+            'мост': '#9c27b0',                          // фиолетовый
+
+            // Городские достопримечательности
+            'парк': '#4caf50',                          // зелёный
+            'сквер': '#4caf50',                          // зелёный
+
+            // По умолчанию
+            'default': '#2e7d32'                         // тёмно-зелёный
         };
 
-        const color = colors[type?.toLowerCase()] || '#2e7d32';
+        // Приводим тип к нижнему регистру и ищем в словаре
+        const normalizedType = type?.toLowerCase() || '';
+        const color = colors[normalizedType] || colors['default'];
 
         return L.divIcon({
             className: 'custom-marker',
@@ -100,13 +152,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 border-radius: 50%;
                 border: 3px solid white;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+                transition: transform 0.2s;
             "></div>`,
             iconSize: [24, 24],
             popupAnchor: [0, -20]
         });
     }
 
-    // ========== АНИМАЦИЯ ПРИ ПРОКРУТКЕ ==========
     const fadeElements = document.querySelectorAll('.fade-in');
 
     function checkFade() {
@@ -122,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     checkFade();
     window.addEventListener('scroll', checkFade);
 
-    // ========== ПЛАВНЫЙ СКРОЛЛ К ЯКОРЯМ ==========
+    // Плавный скролл к якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -136,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ========== ФИЛЬТРАЦИЯ КАРТОЧЕК НА ALL-SITES ==========
+    // Фильтрация карточек на all-sites
     const filterBtns = document.querySelectorAll('.filter-btn');
     const sitesGrid = document.getElementById('sites-grid');
 
@@ -171,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========== ПОИСК ==========
+    // Поиск
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('keyup', function(e) {
@@ -210,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ========== ОБРАБОТКА ПАРАМЕТРОВ URL ==========
+    // Обработка параметров url
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
     if (searchParam && window.location.pathname.includes('all-sites.html')) {
@@ -221,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ========== ДИНАМИЧЕСКИЙ СЧЁТЧИК СТАТИСТИКИ ==========
+    // Счетчик статистики
     const statNumbers = document.querySelectorAll('.stat-number');
     if (statNumbers.length) {
         statNumbers.forEach(stat => {
@@ -240,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========== КНОПКА "НАВЕРХ" ==========
+    // Кнопка наверх
     window.onscroll = function() {
         const btn = document.getElementById('scrollTop');
         if (btn) {
@@ -255,4 +307,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollToTop = function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-}); // <-- Это правильная закрывающая скобка для DOMContentLoaded
+});

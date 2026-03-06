@@ -32,7 +32,6 @@ body {
     padding: 0 20px;
 }
 
-/* ========== ТИПОГРАФИКА ========== */
 h1, h2, h3, h4 {
     font-weight: 600;
     line-height: 1.2;
@@ -48,7 +47,6 @@ h1 {
     animation: fadeInDown 1s ease;
 }
 
-/* Для всех страниц */
 h2 {
     position: relative;
     text-align: center;
@@ -73,7 +71,6 @@ h2:hover::after {
     width: 120px;
 }
 
-/* ========== КНОПКИ ========== */
 .btn {
     display: inline-block;
     padding: 14px 32px;
@@ -130,7 +127,6 @@ h2:hover::after {
     transform: translateY(-3px);
 }
 
-/* ========== НАВИГАЦИЯ ========== */
 .navbar {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
@@ -265,7 +261,6 @@ h2:hover::after {
     pointer-events: none;
 }
 
-/* ========== HERO СЕКЦИЯ ========== */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -336,7 +331,6 @@ h2:hover::after {
     }
 }
 
-/* ========== СЕТКА УСЛУГ ========== */
 .services {
     padding: 100px 0;
     background: white;
@@ -403,7 +397,7 @@ h2:hover::after {
     color: white;
 }
 
-/* ========== КАРТА ========== */
+/* Карта */
 .interactive-map {
     padding: 100px 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -430,7 +424,6 @@ h2:hover::after {
     z-index: 1;
 }
 
-/* Кастомные маркеры с пульсацией */
 .custom-marker {
     background: transparent;
     border: none;
@@ -459,7 +452,6 @@ h2:hover::after {
     animation: none;
 }
 
-/* Попапы Leaflet */
 .leaflet-popup-content-wrapper {
     border-radius: 15px;
     box-shadow: var(--shadow-lg);
@@ -518,7 +510,6 @@ h2:hover::after {
     box-shadow: var(--shadow-md);
 }
 
-/* Панель информации */
 .info-panel {
     background: white;
     border-left: 5px solid var(--primary-green);
@@ -545,7 +536,6 @@ h2:hover::after {
     box-shadow: var(--shadow-lg);
 }
 
-/* ========== СТАТИСТИКА ========== */
 .stats {
     background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
     color: white;
@@ -580,7 +570,6 @@ h2:hover::after {
     opacity: 0.9;
 }
 
-/* ========== КАРТОЧКИ МЕСТ ========== */
 .sites-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -678,7 +667,6 @@ h2:hover::after {
     padding: 10px;
 }
 
-/* ========== КОМАНДА ========== */
 .team-section {
     background: #f8f9fa;
     padding: 60px 0;
@@ -760,7 +748,6 @@ h2:hover::after {
     font-style: italic;
 }
 
-/* ========== ПАРТНЁРЫ ========== */
 .partners {
     padding: 60px 0;
 }
@@ -793,7 +780,7 @@ h2:hover::after {
     font-weight: 500;
 }
 
-/* ========== ПОДВАЛ ========== */
+/* Футер */
 .footer {
     background: linear-gradient(135deg, #1b5e20, #2e7d32);
     color: white;
@@ -835,7 +822,6 @@ h2:hover::after {
     width: 80px;
 }
 
-/* Навигация футера */
 .nav-links-footer {
     list-style: none;
     padding: 0;
@@ -857,7 +843,6 @@ h2:hover::after {
     transform: translateX(5px);
 }
 
-/* Контакты */
 .contact-group {
     display: flex;
     flex-direction: row;
@@ -904,7 +889,6 @@ h2:hover::after {
     transform: translateX(5px);
 }
 
-/* Подвал снизу */
 .footer-bottom {
     margin-top: 30px;
     text-align: center;
@@ -914,7 +898,6 @@ h2:hover::after {
     opacity: 0.8;
 }
 
-/* ========== СТРАНИЦА ДЕТАЛЬНОЙ ИНФОРМАЦИИ ========== */
 .detail-page {
     padding: 100px 0 60px;
     min-height: 100vh;
@@ -1036,7 +1019,6 @@ h2:hover::after {
     transform: scale(1.05);
 }
 
-/* ========== ФИЛЬТРЫ ========== */
 .filter-buttons {
     display: flex;
     gap: 15px;
@@ -1064,7 +1046,6 @@ h2:hover::after {
     box-shadow: var(--shadow-md);
 }
 
-/* ========== АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ ПРОКРУТКЕ ========== */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -1076,7 +1057,7 @@ h2:hover::after {
     transform: translateY(0);
 }
 
-/* ========== АДАПТИВНОСТЬ ========== */
+/* Адаптивность */
 @media (max-width: 768px) {
     .scroll-top {
         bottom: 20px;
@@ -1204,7 +1185,6 @@ h2:hover::after {
     }
 }
 
-/* ===== Статистика 2 колонки до 950px ===== */
 @media (max-width: 950px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1274,7 +1254,6 @@ h2:hover::after {
     }
 }
 
-/* ========== ЗАГРУЗЧИК (PRELOADER) ========== */
 .preloader {
     position: fixed;
     top: 0;
@@ -1308,7 +1287,6 @@ h2:hover::after {
     100% { transform: rotate(360deg); }
 }
 
-/* Кнопка "Наверх" */
 .scroll-top {
     display: none;
     position: fixed;
@@ -1332,9 +1310,6 @@ h2:hover::after {
     transform: translateY(-3px);
 }
 
-/* ========== ИСПРАВЛЕНИЕ ДЛЯ СТРАНИЦЫ "О ПРОЕКТЕ" ========== */
-
-/* Основные стили для ПК (по умолчанию) */
 .mission .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1346,7 +1321,6 @@ h2:hover::after {
     width: 100%;
 }
 
-/* Стили для блока со статистикой - используем stats-block */
 .mission .stats-block {
     background: linear-gradient(135deg, var(--light-green), #ffffff);
     border-radius: 20px;
@@ -1382,7 +1356,6 @@ h2:hover::after {
     margin: 0;
 }
 
-/* Стили для списка */
 .mission ul {
     list-style: none;
     padding: 0;
@@ -1401,7 +1374,7 @@ h2:hover::after {
     font-size: 1.2rem;
 }
 
-/* Заголовок "Наша миссия" */
+
 .mission h2 {
     text-align: left !important;
     margin-bottom: 25px;
@@ -1412,7 +1385,6 @@ h2:hover::after {
     transform: none !important;
 }
 
-/* Стили для команды */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1467,7 +1439,6 @@ h2:hover::after {
     margin-bottom: 10px;
 }
 
-/* Стили для партнёров */
 .partners-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1495,10 +1466,8 @@ h2:hover::after {
     margin-top: 10px;
     font-weight: 500;
 }
-/* ========== ФИНАЛЬНЫЕ ПРАВКИ ДЛЯ МОБИЛЬНЫХ ========== */
 
 @media (max-width: 768px) {
-    /* Исправляем отступы для карточек команды */
     .team-card {
         padding: 20px 15px;
         margin-bottom: 10px;
@@ -1528,7 +1497,6 @@ h2:hover::after {
         line-height: 1.4;
     }
 
-    /* Исправляем отступы для партнёров */
     .partners-grid {
         gap: 20px;
     }
@@ -1548,7 +1516,6 @@ h2:hover::after {
         line-height: 1.3;
     }
 
-    /* Улучшаем читаемость текста в миссии */
     .mission p {
         font-size: 1rem;
         line-height: 1.5;
@@ -1563,7 +1530,6 @@ h2:hover::after {
         font-size: 1.1rem;
     }
 
-    /* Центрируем статистику на мобильных */
     .stats-block {
         margin: 20px 0 0;
     }
@@ -1576,7 +1542,6 @@ h2:hover::after {
         font-size: 1rem;
     }
 
-    /* Кнопка "Наверх" для мобильных */
     .scroll-top {
         bottom: 15px;
         right: 15px;
@@ -1586,7 +1551,6 @@ h2:hover::after {
     }
 }
 
-/* Для очень маленьких экранов (до 480px) */
 @media (max-width: 480px) {
     .team-card {
         padding: 15px 10px;
@@ -1636,10 +1600,8 @@ h2:hover::after {
     height: 100%;
     object-fit: cover;
 }
-/* ========== ИСПРАВЛЕНИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ========== */
 
 @media (max-width: 768px) {
-    /* Исправляем страницу "О проекте" */
     .mission .container {
         grid-template-columns: 1fr !important;
         gap: 30px !important;
@@ -1665,7 +1627,6 @@ h2:hover::after {
         font-size: 1rem !important;
     }
 
-    /* Исправляем карточки команды */
     .team-grid {
         grid-template-columns: 1fr !important;
         gap: 15px !important;
@@ -1700,7 +1661,6 @@ h2:hover::after {
         line-height: 1.4;
     }
 
-    /* Исправляем страницу "Все места" */
     .filter-buttons {
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
@@ -1792,7 +1752,6 @@ h2:hover::after {
     }
 }
 
-/* Для очень маленьких экранов (до 480px) */
 @media (max-width: 480px) {
     .mission h2 {
         font-size: 1.6rem !important;
@@ -1823,11 +1782,9 @@ h2:hover::after {
         font-size: 0.75rem !important;
     }
 }
-/* ========== ИСПРАВЛЕНИЕ ЗАГОЛОВКА "ВСЕ ДОСТОПРИМЕЧАТЕЛЬНОСТИ" ========== */
 
-/* Для экранов до 768px */
 @media (max-width: 768px) {
-    /* Заголовок на странице all-sites.html */
+
     .detail-header h1 {
         font-size: 2rem !important;
         word-break: break-word !important;
@@ -1836,7 +1793,7 @@ h2:hover::after {
         line-height: 1.3 !important;
     }
 
-    /* Подзаголовок */
+
     .detail-header p {
         font-size: 1rem !important;
         padding: 0 15px !important;
@@ -1844,7 +1801,6 @@ h2:hover::after {
     }
 }
 
-/* Для очень маленьких экранов (до 480px) */
 @media (max-width: 480px) {
     .detail-header h1 {
         font-size: 1.5rem !important;
@@ -1856,9 +1812,11 @@ h2:hover::after {
     }
 }
 
-/* Для экранов до 360px (самые маленькие телефоны) */
 @media (max-width: 360px) {
     .detail-header h1 {
         font-size: 1.3rem !important;
     }
+}
+#sites-count::after {
+    content: '+';
 }
