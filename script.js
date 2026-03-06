@@ -19,74 +19,66 @@ document.addEventListener('DOMContentLoaded', function() {
         const mapElement = document.getElementById('leaflet-map');
         if (!mapElement) return;
 
-        var map = L.map('leaflet-map').setView([52.6, 39.6], 9);
+        window.map = L.map('leaflet-map').setView([52.6, 39.6], 9);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+        }).addTo(window.map);
 
         // Загружаем данные из глобальной переменной sitesDatabase
         if (typeof sitesDatabase !== 'undefined' && sitesDatabase.length) {
-            addMarkers(map, sitesDatabase);
+            addMarkers(window.map, sitesDatabase);
         }
 
         // Исправление для корректного отображения на мобильных
-        setTimeout(() => map.invalidateSize(), 200);
+        setTimeout(() => window.map.invalidateSize(), 200);
 
         window.addEventListener('resize', () => {
-            setTimeout(() => map.invalidateSize(), 100);
+            setTimeout(() => window.map.invalidateSize(), 100);
         });
     }
 
     function addMarkers(map, sites) {
-
         sites.forEach(site => {
-            if (!site.coords) {
-                console.warn('Нет координат у:', site.name);
-                return;
-            }
+            if (!site.coords) return;
 
-            try {
-                const marker = L.marker(site.coords, {
-                    icon: createCustomIcon(site.type),
-                    riseOnHover: true
-                }).addTo(map);
+            const marker = L.marker(site.coords, {
+                icon: createCustomIcon(site.type),
+                riseOnHover: true
+            }).addTo(map);
 
-                const popupContent = `
-                    <div style="text-align: center;">
-                        <div class="popup-title">${site.name}</div>
-                        <div class="popup-type">${site.category || site.type}</div>
-                        <p style="margin: 10px 0;">${site.description.substring(0, 100)}...</p>
-                        <button onclick="window.location.href='sites/${site.id}.html'" class="popup-btn">
-                            <i class="fas fa-info-circle"></i> Подробнее
+            const popupContent = `
+                <div style="text-align: center;">
+                    <div class="popup-title">${site.name}</div>
+                    <div class="popup-type">${site.category || site.type}</div>
+                    <p style="margin: 10px 0;">${site.description.substring(0, 100)}...</p>
+                    <button onclick="window.location.href='sites/${site.id}.html'" class="popup-btn">
+                        <i class="fas fa-info-circle"></i> Подробнее
+                    </button>
+                </div>
+            `;
+
+            marker.bindPopup(popupContent, {
+                maxWidth: 300,
+                minWidth: 250
+            });
+
+            marker.on('click', function() {
+                const quickInfo = document.getElementById('quick-info');
+                if (quickInfo) {
+                    quickInfo.innerHTML = `
+                        <h3>${site.name}</h3>
+                        <p><strong>Тип:</strong> ${site.category || site.type}</p>
+                        <p>${site.fullDescription ? site.fullDescription.substring(0, 150) + '...' : site.description}</p>
+                        <button onclick="window.location.href='sites/${site.id}.html'" class="btn btn-primary" style="margin-top: 15px; width: 100%;">
+                            Перейти к полной информации →
                         </button>
-                    </div>
-                `;
-
-                marker.bindPopup(popupContent, {
-                    maxWidth: 300,
-                    minWidth: 250
-                });
-
-                marker.on('click', function() {
-                    const quickInfo = document.getElementById('quick-info');
-                    if (quickInfo) {
-                        quickInfo.innerHTML = `
-                            <h3>${site.name}</h3>
-                            <p><strong>Тип:</strong> ${site.category || site.type}</p>
-                            <p>${site.fullDescription ? site.fullDescription.substring(0, 150) + '...' : site.description}</p>
-                            <button onclick="window.location.href='sites/${site.id}.html'" class="btn btn-primary" style="margin-top: 15px; width: 100%;">
-                                Перейти к полной информации →
-                            </button>
-                        `;
-                    }
-                });
-
-            } catch (error) {
-                console.error('Ошибка при добавлении маркера для', site.name, error);
-            }
+                    `;
+                }
+            });
         });
     }
+
     function createCustomIcon(type) {
         const colors = {
             // Заповедники и ООПТ
