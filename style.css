@@ -1323,3 +1323,35 @@ h2:hover::after { width: 120px; }
 
 @media (max-height: 600px) { #leaflet-map { height: 350px; } }
 @media (max-height: 800px) { #leaflet-map { height: 450px; } }
+/* Стрелки для лайтбокса */
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-nav:hover {
+    background: var(--primary-green);
+    transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .lightbox-nav { display: none; }
+}

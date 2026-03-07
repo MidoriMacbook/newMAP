@@ -426,5 +426,105 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.touches.length < 2) lastPinchDist = null;
         if (e.touches.length === 0) isDragging = false;
     });
+    // Стрелки
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
 
+    let galleryImages = [];
+    let currentImageIndex = 0;
+
+    document.querySelectorAll('.detail-gallery img').forEach((img, index) => {
+        galleryImages.push(img);
+        img.addEventListener('click', function() {
+            currentImageIndex = index;
+            openLightbox(this.src);
+        });
+    });
+
+    function prevImage() {
+        if (!galleryImages.length) return;
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentImageIndex].src;
+        resetZoom();
+    }
+
+    function nextImage() {
+        if (!galleryImages.length) return;
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentImageIndex].src;
+        resetZoom();
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            prevImage();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            nextImage();
+        });
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (lightbox.style.display !== 'flex') return;
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+    });
+
+    // Сброс зума при переключении
+    function resetZoom() {
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        zoomLabel.textContent = '100%';
+        lightboxImg.style.cursor = 'zoom-in';
+        applyTransform();
+    }
+        // Для телефонов
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    let isSwiping = false;
+
+    lightboxImg.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1 && scale <= 1) { // только если не увеличино
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            isSwiping = true;
+        }
+    }, { passive: true });
+
+    lightboxImg.addEventListener('touchmove', function(e) {
+        if (!isSwiping || e.touches.length !== 1) return;
+
+        touchEndX = e.touches[0].clientX;
+        touchEndY = e.touches[0].clientY;
+
+        e.preventDefault();
+    }, { passive: false });
+
+    lightboxImg.addEventListener('touchend', function(e) {
+        if (!isSwiping || scale > 1) {
+            isSwiping = false;
+            return;
+        }
+
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                prevImage();
+            } else {
+                nextImage();
+            }
+        }
+
+        isSwiping = false;
+    });
 });
