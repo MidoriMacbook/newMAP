@@ -1,5 +1,3 @@
-// sites-data.js - база данных достопримечательностей Липецкой области
-
 const sitesDatabase = [
     {
         id: 'galichya-gora',
@@ -39,7 +37,6 @@ const sitesDatabase = [
         status: 'ООПТ федерального значения',
         importance: 'федерального значения'
     },
-
     {
         id: 'vorgolskie-skaly',
         image: 'img/vorgolskieskaly1.jpg',
@@ -646,7 +643,7 @@ const sitesDatabase = [
     }
 ];
 
-// Функции для работы с базой данных
+//Функции для работы с базой данных
 function getAllSites() {
     return sitesDatabase;
 }
@@ -663,7 +660,7 @@ function getSitesByRegion(region) {
     return sitesDatabase.filter(site => site.region.includes(region));
 }
 
-// Глобальный поиск по сайту
+//Глобальный поиск по сайту
 if (typeof document !== 'undefined') {
     document.getElementById('search-input')?.addEventListener('keyup', function(e) {
         if (e.key === 'Enter') {

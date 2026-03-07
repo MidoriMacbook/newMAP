@@ -16,7 +16,6 @@
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -43,18 +42,15 @@
             </div>
         </div>
     </nav>
-
     <section class="detail-header">
         <div class="container">
             <h1 style="color: white;">Силикатные озёра</h1>
             <p style="font-size: 1.2rem;">Водный объект • Липецкий район</p>
         </div>
     </section>
-
     <section class="detail-page">
         <div class="container">
             <div class="detail-content">
-                <!-- Левая колонка с описанием -->
                 <div class="detail-info fade-in">
                     <h2>О Силикатных озёрах</h2>
                     <div style="white-space: pre-line;">
@@ -62,7 +58,6 @@
                         <p>Сегодня территория является одной из самых популярных природных зон отдыха в Липецке. Озёра отличаются разной глубиной и площадью, соединяются между собой протоками и частично связаны с рекой Воронеж. Благодаря родниковому питанию вода здесь сравнительно чистая, а окружающий ландшафт сочетает песчаные склоны, зелёные насаждения и открытые водные пространства.</p>
                         <p>Несмотря на искусственное происхождение, природная среда вокруг озёр постепенно сформировала собственную экосистему. Место привлекает любителей спокойного отдыха, рыбалки и прогулок на природе.</p>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                         <span class="activity-tag">Прогулки у воды</span>
@@ -70,7 +65,6 @@
                         <span class="activity-tag">Пикники на природе</span>
                         <span class="activity-tag">Фотосъёмка</span>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
                     <div class="detail-gallery">
                         <div class="gallery-item"><img src="../img/sylycatnyeozera1.webp"></div>
@@ -78,8 +72,6 @@
                         <div class="gallery-item"><img src="../img/sylycatnyeozera3.jpeg"></div>
                     </div>
                 </div>
-
-                <!-- Правая колонка с деталями -->
                 <div class="detail-sidebar fade-in">
                     <h3 style="margin-bottom: 20px;">Детали</h3>
                     <ul style="list-style: none;">
@@ -100,18 +92,13 @@
                             <strong>Статус:</strong> природно-рекреационная зона регионального значения
                         </li>
                     </ul>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Редкие виды</h3>
                     <p><strong>Птицы:</strong> Серая цапля, большая выпь, лысуха, камышница, озёрная чайка, болотный лунь, речная крачка</p>
                     <p><strong>Растения:</strong> Кубышка жёлтая, кувшинка белая</p>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Как добраться</h3>
                     <p>Липецкая область, город Липецк, Левобережный округ. Удобнее всего добраться на автомобиле по направлению к Силикатным карьерам. Координаты для навигатора: 52.6050° N, 39.6689° E.</p>
-
                     <div style="margin-top: 30px;">
                         <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
                             <i class="fas fa-arrow-left"></i> Назад
@@ -121,7 +108,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -174,7 +160,6 @@
             </div>
         </div>
     </footer>
-
     <script src="../sites-data.js"></script>
     <script src="../script.js"></script>
     <script>
@@ -182,20 +167,17 @@
             const burger = document.getElementById('burger');
             const navOverlay = document.querySelector('.nav-overlay');
             const menuClose = document.querySelector('.menu-close');
-
             if (burger && navOverlay) {
                 burger.addEventListener('click', function() {
                     navOverlay.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-
                 if (menuClose) {
                     menuClose.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');
                         burger.classList.remove('toggle');
                     });
                 }
-
                 navOverlay.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');

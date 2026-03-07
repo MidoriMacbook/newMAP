@@ -14,11 +14,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -47,8 +45,6 @@
             </div>
         </div>
     </nav>
-
-
     <section class="hero">
         <div class="container">
             <h1>
@@ -62,25 +58,19 @@
             </div>
         </div>
     </section>
-
-
     <section id="map" class="interactive-map fade-in">
         <div class="container">
             <h2>Исследуйте заповедные места</h2>
             <p style="text-align: center; margin-bottom: 30px;">Кликните на любой маркер, чтобы узнать о достопримечательности, или нажмите "Подробнее" для полной информации.</p>
-
             <div class="map-wrapper">
                 <div id="leaflet-map"></div>
             </div>
-
-
             <div id="quick-info" class="info-panel">
                 <h3>Добро пожаловать на карту!</h3>
                 <p>Нажмите на любой зелёный маркер, чтобы увидеть краткую информацию о месте. Для полного описания нажмите "Подробнее".</p>
             </div>
         </div>
     </section>
-
     <section class="stats fade-in">
         <div class="container">
             <div class="stats-grid">
@@ -103,8 +93,6 @@
             </div>
         </div>
     </section>
-
-
     <section class="services fade-in">
         <div class="container">
             <h2>Популярные места</h2>
@@ -115,7 +103,6 @@
             </div>
         </div>
     </section>
-
 <footer class="footer">
     <div class="container">
         <div class="footer-content">
@@ -123,7 +110,6 @@
                 <h4>Зелёная карта</h4>
                 <p>Интерактивный путеводитель по особо охраняемым природным территориям Липецкой области.</p>
             </div>
-
             <div class="footer-section">
                 <h4>Навигация</h4>
                 <ul class="nav-links-footer">
@@ -133,7 +119,6 @@
                     <li><a href="all-sites.html">Все места</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h4>Контакты</h4>
                 <div class="contact-group">
@@ -152,7 +137,6 @@
                             <li><a href="https://vk.com/ekolip" target="_blank">Министерство природных ресурсов и экологии</a></li>
                         </ul>
                     </div>
-
                     <div class="contact-item">
                         <svg width="24" height="24" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 0.297C5.37 0.297 0 5.667 0 12.297C0 17.622 3.438 22.092 8.207 23.682C8.807 23.772 9.027 23.402 9.027 23.082C9.027 22.792 9.017 22.052 9.012 21.052C5.672 21.772 4.967 19.572 4.967 19.572C4.422 18.172 3.633 17.802 3.633 17.802C2.547 17.072 3.717 17.087 3.717 17.087C4.922 17.172 5.555 18.322 5.555 18.322C6.622 20.072 8.352 19.522 9.047 19.222C9.132 18.452 9.432 17.922 9.762 17.622C7.092 17.322 4.292 16.272 4.292 11.592C4.292 10.282 4.742 9.222 5.532 8.392C5.407 8.092 5.027 6.852 5.657 5.172C5.657 5.172 6.657 4.852 9.012 6.462C9.957 6.202 10.957 6.072 11.957 6.067C12.957 6.072 13.957 6.202 14.907 6.462C17.257 4.852 18.257 5.172 18.257 5.172C18.887 6.852 18.507 8.092 18.382 8.392C19.172 9.222 19.622 10.282 19.622 11.592C19.622 16.282 16.817 17.322 14.142 17.622C14.562 17.972 14.947 18.652 14.947 19.722C14.947 21.332 14.937 22.672 14.937 23.082C14.937 23.402 15.152 23.772 15.757 23.682C20.528 22.092 24 17.622 24 12.297C24 5.667 18.627 0.297 12 0.297Z"/>
@@ -166,18 +150,15 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>© 2026 Зелёная карта Липецкой области. Все права защищены.</p>
         </div>
     </div>
 </footer>
-
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="sites-data.js"></script>
     <script src="script.js"></script>
     <script>
-        // Заполнение популярных мест (первые 4)
         document.addEventListener('DOMContentLoaded', function() {
             const popularGrid = document.getElementById('popular-sites');
             if (popularGrid && typeof sitesDatabase !== 'undefined') {

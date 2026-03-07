@@ -16,7 +16,6 @@
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -43,45 +42,36 @@
             </div>
         </div>
     </nav>
-
     <section class="detail-header">
         <div class="container">
             <h1 style="color: white;">Галичья Гора</h1>
             <p style="font-size: 1.2rem;">Заповедник • Задонский район</p>
         </div>
     </section>
-
     <section class="detail-page">
         <div class="container">
             <div class="detail-content">
-                <!-- Левая колонка с описанием -->
                 <div class="detail-info fade-in">
                     <h2>О Галичьей Горе</h2>
                     <div style="white-space: pre-line;">
                         <p>Галичья Гора — государственный природный заповедник федерального значения, один из самых маленьких заповедников в мире. Расположен на правом берегу Дона в Задонском районе Липецкой области.</p>
-
                         <p>Уникален тем, что на его территории сохранились реликтовые растения доледникового периода. Здесь можно увидеть шиверекию подольскую, кострицу донецкую, эфедру двухколосковую.</p>
-
                         <p>Фауна включает 147 видов птиц, 38 видов млекопитающих. Гнездятся редкие виды: беркут, сапсан, балобан, орлан-белохвост.</p>
-
                         <p>Заповедник состоит из шести участков: "Галичья Гора", "Морозова Гора", "Воронов Камень", "Воргольское", "Плющань", "Быкова Шея".</p>
-
+                    </div>
                     <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                         <span class="activity-tag">Экскурсии</span>
                         <span class="activity-tag">Научные исследования</span>
                         <span class="activity-tag">Фотоохота</span>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
                     <div class="detail-gallery">
                         <div class="gallery-item"><img src="../img/galichyagora1.jpg"></div>
                         <div class="gallery-item"><img src="../img/galichyagora2.jpg"></div>
                         <div class="gallery-item"><img src="../img/galichyagora3.jpg"></div>
                     </div>
-                </div>
             </div>
-                <!-- Правая колонка с деталями -->
                 <div class="detail-sidebar fade-in">
                     <h3 style="margin-bottom: 20px;">Детали</h3>
                     <ul style="list-style: none;">
@@ -102,17 +92,12 @@
                             <strong>Статус:</strong> Особо охраняемая природная территория федерального значения
                         </li>
                     </ul>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Редкие виды</h3>
                     <p>Шиверекия подольская, кизильник алаунский, беркут, сапсан, орлан-белохвост</p>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Как добраться</h3>
                     <p>От Липецка по трассе М4 "Дон" до поворота на село Каменка (80 км), далее по указателям. Координаты для навигатора: 52.6012, 38.9285.</p>
-
                     <div style="margin-top: 30px;">
                         <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
                             <i class="fas fa-arrow-left"></i> Назад
@@ -122,7 +107,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -175,29 +159,24 @@
             </div>
         </div>
     </footer>
-
     <script src="../sites-data.js"></script>
     <script src="../script.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.getElementById('burger');
             const navOverlay = document.querySelector('.nav-overlay');
             const menuClose = document.querySelector('.menu-close');
-
             if (burger && navOverlay) {
                 burger.addEventListener('click', function() {
                     navOverlay.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-
                 if (menuClose) {
                     menuClose.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');
                         burger.classList.remove('toggle');
                     });
                 }
-
                 navOverlay.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');

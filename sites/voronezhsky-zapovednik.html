@@ -39,24 +39,23 @@
             </div>
         </div>
     </nav>
-
     <section class="detail-header">
         <div class="container">
             <h1 style="color: white;">Воронежский заповедник</h1>
             <p style="font-size: 1.2rem;">Заповедник • Усманский район</p>
         </div>
     </section>
-
     <section class="detail-page">
         <div class="container">
             <div class="detail-content">
                 <div class="detail-info fade-in">
                     <h2>О Воронежском заповеднике</h2>
-                    <p>Воронежский государственный природный заповедник расположен на границе Воронежской и Липецкой областей. Основан в 1923 году для сохранения речного бобра. Здесь находится знаменитый бобровый питомник.</p>
-                    <p>Территория покрыта сосновыми борами, дубравами, ольшаниками. Возраст некоторых деревьев достигает 200 лет.</p>
-                    <p>Флора насчитывает более 1000 видов растений. Фауна: лоси, кабаны, олени, волки, рыси, бобры, выдры.</p>
-                    <p>На территории Липецкой области находится Усманский участок заповедника.</p>
-
+                    <div style="white-space: pre-line;">
+                        <p>Воронежский государственный природный заповедник расположен на границе Воронежской и Липецкой областей. Основан в 1923 году для сохранения речного бобра. Здесь находится знаменитый бобровый питомник.</p>
+                        <p>Территория покрыта сосновыми борами, дубравами, ольшаниками. Возраст некоторых деревьев достигает 200 лет.</p>
+                        <p>Флора насчитывает более 1000 видов растений. Фауна: лоси, кабаны, олени, волки, рыси, бобры, выдры.</p>
+                        <p>На территории Липецкой области находится Усманский участок заповедника.</p>
+                    </div>
                     <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                         <span class="activity-tag">Экскурсии</span>
@@ -64,7 +63,6 @@
                         <span class="activity-tag">Экотропы</span>
                         <span class="activity-tag">Музей природы</span>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
                     <div class="detail-gallery">
                         <div class="gallery-item"><img src="../img/voronezhskyzapovednik1.jpg"></div>
@@ -72,7 +70,6 @@
                         <div class="gallery-item"><img src="../img/voronezhskyzapovednik3.jpg"></div>
                     </div>
                 </div>
-
                 <div class="detail-sidebar fade-in">
                     <h3 style="margin-bottom: 20px;">Детали</h3>
                     <ul style="list-style: none;">
@@ -81,17 +78,12 @@
                         <li style="margin-bottom: 15px;"><i class="fas fa-calendar"></i> <strong>Основан:</strong> 1923</li>
                         <li style="margin-bottom: 15px;"><i class="fas fa-leaf"></i> <strong>Статус:</strong> ООПТ федерального значения</li>
                     </ul>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Редкие виды</h3>
                     <p>Бобр, выдра, орлан-белохвост, черный аист, зубянка</p>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Как добраться</h3>
                     <p>Через город Усмань, далее по указателям. Координаты центральной усадьбы: 51.9167, 39.3500</p>
-
                     <div style="margin-top: 30px;">
                         <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
                             <i class="fas fa-arrow-left"></i> Назад
@@ -101,7 +93,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -153,31 +144,25 @@
                 <p>© 2026 Зелёная карта Липецкой области. Все права защищены.</p>
             </div>
         </div>
-</footer>
-        <!-- Подключаем основные скрипты -->
-    <script src="../sites-data.js"></script>
-    <script src="../script.js"></script>
-
-    <!-- Маленький скрипт только для меню -->
+    </footer>
+<script src="../sites-data.js"></script>
+<script src="../script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.getElementById('burger');
             const navOverlay = document.querySelector('.nav-overlay');
             const menuClose = document.querySelector('.menu-close');
-
             if (burger && navOverlay) {
                 burger.addEventListener('click', function() {
                     navOverlay.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-
                 if (menuClose) {
                     menuClose.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');
                         burger.classList.remove('toggle');
                     });
                 }
-
                 navOverlay.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');

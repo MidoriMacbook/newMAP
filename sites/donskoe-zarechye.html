@@ -16,7 +16,6 @@
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -43,25 +42,20 @@
             </div>
         </div>
     </nav>
-
     <section class="detail-header">
         <div class="container">
             <h1 style="color: white;">Донское Заречье</h1>
             <p style="font-size: 1.2rem;">Природный парк • Задонский район</p>
         </div>
     </section>
-
     <section class="detail-page">
         <div class="container">
             <div class="detail-content">
-                <!-- Левая колонка с описанием -->
                 <div class="detail-info fade-in">
                     <h2>О Донском Заречье</h2>
                     <div style="white-space: pre-line;">
                         <p>Природный парк «Донское Заречье» создан в 2015 году для сохранения уникальных ландшафтов долины Дона и развития экологического туризма в Липецкой области. Парк расположен на живописном левом берегу Дона, напротив старинного города Задонска.</p>
-
                         <p>Территория парка включает пойменные луга, лиственные леса, песчаные пляжи и живописные меловые обнажения. Здесь оборудованы экологические тропы, ведущие к смотровым площадкам с великолепными видами на Дон и Задонский монастырь.</p>
-
                         <p>Особую ценность представляют:</p>
                         <ul>
                             <li><strong>Пляжная зона</strong> — песчаные пляжи протяжённостью несколько километров, популярное место летнего отдыха</li>
@@ -70,12 +64,9 @@
                             <li><strong>Рыболовные места</strong> — Дон славится разнообразием рыбы</li>
                             <li><strong>Смотровые площадки</strong> — с видом на Задонск, монастырь и долину Дона</li>
                         </ul>
-
                         <p>Леса парка богаты грибами и ягодами. Здесь обитают лоси, кабаны, зайцы, лисы, бобры. В пойме Дона гнездятся водоплавающие птицы: утки, цапли, чайки.</p>
-
                         <p>Зимой популярны лыжные прогулки и подлёдная рыбалка. Парк работает круглогодично и привлекает как жителей области, так и туристов из других регионов.</p>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                         <span class="activity-tag">Пляж</span>
@@ -87,7 +78,6 @@
                         <span class="activity-tag">Пикники</span>
                         <span class="activity-tag">Лыжные прогулки</span>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
                     <div class="detail-gallery">
                         <div class="gallery-item"><img src="../img/donskoezarechye2.webp"></div>
@@ -95,8 +85,6 @@
                         <div class="gallery-item"><img src="../img/donskoezarechye4.webp"></div>
                     </div>
                 </div>
-
-                <!-- Правая колонка с деталями -->
                 <div class="detail-sidebar fade-in">
                     <h3 style="margin-bottom: 20px;">Детали</h3>
                     <ul style="list-style: none;">
@@ -125,25 +113,19 @@
                             <strong>Режим работы:</strong> Круглосуточно
                         </li>
                     </ul>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Животный мир</h3>
                     <p><strong>Млекопитающие:</strong> Лось, кабан, заяц-русак, лисица, бобр, ондатра</p>
                     <p><strong>Птицы:</strong> Кряква, серая цапля, чайка, зимородок, трясогузка</p>
                     <p><strong>Рыбы:</strong> Лещ, судак, щука, окунь, плотва, карась</p>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Как добраться</h3>
                     <p><strong>Координаты:</strong> 52.7167, 38.9000</p>
                     <p><strong>На автомобиле:</strong> От Задонска по дороге на село Паниковка (около 10 км). Далее по указателям на «Донское Заречье».</p>
                     <p><strong>На автобусе:</strong> От автовокзала Задонска до остановки «Паниковка», далее пешком около 2 км.</p>
-
                     <div style="background: rgba(255,255,255,0.8); border-radius: 10px; padding: 15px; margin-top: 20px;">
                         <p><strong>🏕️ Инфраструктура:</strong> Оборудованы места для кемпинга, пикниковые точки, парковка, туалеты. В летний сезон работает кафе.</p>
                     </div>
-
                     <div style="margin-top: 30px;">
                         <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
                             <i class="fas fa-arrow-left"></i> Назад
@@ -153,7 +135,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -206,29 +187,24 @@
             </div>
         </div>
     </footer>
-
     <script src="../sites-data.js"></script>
     <script src="../script.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.getElementById('burger');
             const navOverlay = document.querySelector('.nav-overlay');
             const menuClose = document.querySelector('.menu-close');
-
             if (burger && navOverlay) {
                 burger.addEventListener('click', function() {
                     navOverlay.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-
                 if (menuClose) {
                     menuClose.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');
                         burger.classList.remove('toggle');
                     });
                 }
-
                 navOverlay.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');

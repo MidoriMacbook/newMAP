@@ -16,7 +16,6 @@
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -43,32 +42,24 @@
             </div>
         </div>
     </nav>
-
     <section class="detail-header">
         <div class="container">
             <h1 style="color: white;">Плющань</h1>
             <p style="font-size: 1.2rem;">Памятник природы • Задонский район</p>
         </div>
     </section>
-
     <section class="detail-page">
         <div class="container">
             <div class="detail-content">
-                <!-- Левая колонка с описанием -->
                 <div class="detail-info fade-in">
                     <h2>О Плющани</h2>
                     <div style="white-space: pre-line;">
                         <p>Плющань — один из шести участков заповедника «Галичья Гора», расположенный в долине реки Плющанка (приток Дона). Название, вероятно, связано с обилием плюща или других вьющихся растений в этих местах.</p>
-
                         <p>Территория представляет собой нагорную дубраву — уникальный лесной массив на высоком правом берегу реки. Здесь сохранились старовозрастные дубы, возраст некоторых достигает 200-250 лет. В подлеске встречаются липа, клён остролистный, вяз, бересклет.</p>
-
                         <p>Особую ценность представляют весенние эфемероиды — раннецветущие растения, которые покрывают лес ярким ковром в апреле-мае: хохлатки, ветреница лютиковая, гусиный лук, медуница неясная. Позже зацветают ландыши, колокольчики, фиалки.</p>
-
                         <p>В дубраве обитают типичные лесные животные: кабаны, косули, лисы, зайцы, белки. Разнообразен мир птиц — здесь гнездятся дятлы, синицы, дрозды, славки, иволги.</p>
-
                         <p>Плющань — важный объект научных исследований ботаников и зоологов. Здесь изучаются процессы восстановления дубрав после рубок и естественные сукцессии.</p>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                         <span class="activity-tag">Ботанические экскурсии</span>
@@ -77,7 +68,6 @@
                         <span class="activity-tag">Сбор грибов (по разрешению)</span>
                         <span class="activity-tag">Научные исследования</span>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
                     <div class="detail-gallery">
                         <div class="gallery-item"><img src="../img/plyushchan1.webp"></div>
@@ -85,8 +75,6 @@
                         <div class="gallery-item"><img src="../img/plyushchan4.jpg"></div>
                     </div>
                 </div>
-
-                <!-- Правая колонка с деталями -->
                 <div class="detail-sidebar fade-in">
                     <h3 style="margin-bottom: 20px;">Детали</h3>
                     <ul style="list-style: none;">
@@ -115,25 +103,19 @@
                             <strong>Возраст дубов:</strong> до 250 лет
                         </li>
                     </ul>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Редкие виды</h3>
                     <p><strong>Растения:</strong> Хохлатка Маршалла, ветреница лесная, гусиный лук жёлтый, медуница неясная, ландыш майский, колокольчик крапиволистный</p>
                     <p><strong>Птицы:</strong> Дятел зелёный, иволга, славка-черноголовка, дрозд-рябинник</p>
                     <p><strong>Животные:</strong> Кабан, косуля, лисица, белка, куница</p>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Как добраться</h3>
                     <p><strong>Координаты:</strong> 52.5167, 38.8500</p>
                     <p>Участок расположен в 8 км от села Каменка Задонского района, в долине реки Плющанка. Добраться можно на автомобиле по трассе М4 «Дон» до поворота на Каменку, далее по грунтовым дорогам около 5 км.</p>
                     <p>Посещение возможно только в составе экскурсионных групп по предварительной записи в администрации заповедника «Галичья Гора».</p>
-
                     <div style="background: rgba(255,255,255,0.8); border-radius: 10px; padding: 15px; margin-top: 20px;">
                         <p><strong>🌿 Лучшее время для посещения:</strong> Май — время цветения весенних эфемероидов, и сентябрь — золотая осень и сезон грибов.</p>
                     </div>
-
                     <div style="margin-top: 30px;">
                         <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
                             <i class="fas fa-arrow-left"></i> Назад
@@ -143,7 +125,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -196,29 +177,24 @@
             </div>
         </div>
     </footer>
-
     <script src="../sites-data.js"></script>
     <script src="../script.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.getElementById('burger');
             const navOverlay = document.querySelector('.nav-overlay');
             const menuClose = document.querySelector('.menu-close');
-
             if (burger && navOverlay) {
                 burger.addEventListener('click', function() {
                     navOverlay.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-
                 if (menuClose) {
                     menuClose.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');
                         burger.classList.remove('toggle');
                     });
                 }
-
                 navOverlay.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');

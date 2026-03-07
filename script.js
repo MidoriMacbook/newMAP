@@ -1,6 +1,4 @@
-// script.js - основной файл с интерактивностью
-
-// Прелоадер
+//Прелоадер
 window.addEventListener('load', () => {
     const preloader = document.querySelector('.preloader');
     if (preloader) {
@@ -9,30 +7,24 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Инициализация карты
+    
+    //Инициализация карты
     if (document.getElementById('leaflet-map')) {
         initMap();
     }
-
     function initMap() {
         const mapElement = document.getElementById('leaflet-map');
         if (!mapElement) return;
-
         window.map = L.map('leaflet-map').setView([52.6, 39.6], 9);
-
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(window.map);
-
-        // Загружаем данные из глобальной переменной sitesDatabase
+        //Загружаем данные из глобальной переменной sitesDatabase
         if (typeof sitesDatabase !== 'undefined' && sitesDatabase.length) {
             addMarkers(window.map, sitesDatabase);
         }
-
-        // Исправление для корректного отображения на мобильных
+        //Исправление для корректного отображения на мобильных
         setTimeout(() => window.map.invalidateSize(), 200);
-
         window.addEventListener('resize', () => {
             setTimeout(() => window.map.invalidateSize(), 100);
         });
@@ -41,12 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function addMarkers(map, sites) {
         sites.forEach(site => {
             if (!site.coords) return;
-
             const marker = L.marker(site.coords, {
                 icon: createCustomIcon(site.type),
                 riseOnHover: true
             }).addTo(map);
-
             const popupContent = `
                 <div style="text-align: center;">
                     <div class="popup-title">${site.name}</div>
@@ -57,12 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     </button>
                 </div>
             `;
-
             marker.bindPopup(popupContent, {
                 maxWidth: 300,
                 minWidth: 250
             });
-
             marker.on('click', function() {
                 const quickInfo = document.getElementById('quick-info');
                 if (quickInfo) {
@@ -81,60 +69,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function createCustomIcon(type) {
         const colors = {
-            // Заповедники и ООПТ
-            'заповедник': '#2e7d32',           // тёмно-зелёный
-            'памятник природы': '#4caf50',      // зелёный
-            'природный парк': '#81c784',        // светло-зелёный
-            'заказник': '#66bb6a',              // средне-зелёный
+            //Заповедники и ООПТ
+            'заповедник': '#2e7d32',           //тёмно-зелёный
+            'памятник природы': '#4caf50',     //зелёный
+            'природный парк': '#81c784',       //светло-зелёный
+            'заказник': '#66bb6a',             //средне-зелёный
+            
+            //Водные объекты
+            'водный': '#0288d1',                 //синий
+            'водный объект': '#0288d1',          //синий
+            'река': '#0288d1',                   //синий
+            'озеро': '#0288d1',                  //синий
+            'водохранилище': '#0288d1',          //синий
 
-            // Водные объекты
-            'водный': '#0288d1',                 // синий
-            'водный объект': '#0288d1',          // синий
-            'река': '#0288d1',                    // синий
-            'озеро': '#0288d1',                    // синий
-            'водохранилище': '#0288d1',           // синий
+            //Духовные центры
+            'духовный центр': '#1b5e20',          //тёмно-зелёный
+            'духовный': '#1b5e20',                //тёмно-зелёный
+            'монастырь': '#1b5e20',               //тёмно-зелёный
+            'храм': '#1b5e20',                    //тёмно-зелёный
+            'святые места': '#1b5e20',            //тёмно-зелёный
 
-            // Духовные центры
-            'духовный центр': '#1b5e20',          // тёмно-зелёный
-            'духовный': '#1b5e20',                 // тёмно-зелёный
-            'монастырь': '#1b5e20',                 // тёмно-зелёный
-            'храм': '#1b5e20',                      // тёмно-зелёный
-            'святые места': '#1b5e20',              // тёмно-зелёный
+            //Усадьбы
+            'усадьба': '#8bc34a',                  //салатовый
+            'историческая усадьба': '#8bc34a',     //салатовый
 
-            // Усадьбы
-            'усадьба': '#8bc34a',                  // салатовый
-            'историческая усадьба': '#8bc34a',     // салатовый
+            //Археология
+            'археологический': '#cddc39',          //жёлто-зелёный
+            'археологический памятник': '#cddc39', //жёлто-зелёный
 
-            // Археология
-            'археологический': '#cddc39',          // жёлто-зелёный
-            'археологический памятник': '#cddc39', // жёлто-зелёный
+            //Лесные массивы
+            'лесной': '#388e3c',                    //зелёный
+            'лесной массив': '#388e3c',             //зелёный
 
-            // Лесные массивы
-            'лесной': '#388e3c',                    // зелёный
-            'лесной массив': '#388e3c',              // зелёный
+            //Геологические объекты
+            'геологический': '#ff9800',              //оранжевый
+            'геологический объект': '#ff9800',       //оранжевый
+            'карстовый': '#ff9800',                  //оранжевый
 
-            // Геологические объекты
-            'геологический': '#ff9800',              // оранжевый
-            'геологический объект': '#ff9800',       // оранжевый
-            'карстовый': '#ff9800',                   // оранжевый
+            //Исторические памятники
+            'исторический': '#9c27b0',                //фиолетовый
+            'памятник инженерии': '#9c27b0',          //фиолетовый
+            'мост': '#9c27b0',                        //фиолетовый
 
-            // Исторические памятники
-            'исторический': '#9c27b0',                // фиолетовый
-            'памятник инженерии': '#9c27b0',          // фиолетовый
-            'мост': '#9c27b0',                          // фиолетовый
+            //Городские достопримечательности
+            'парк': '#4caf50',                          //зелёный
+            'сквер': '#4caf50',                         //зелёный
 
-            // Городские достопримечательности
-            'парк': '#4caf50',                          // зелёный
-            'сквер': '#4caf50',                          // зелёный
-
-            // По умолчанию
-            'default': '#2e7d32'                         // тёмно-зелёный
+            //По умолчанию
+            'default': '#2e7d32'                        //тёмно-зелёный
         };
 
-        // Приводим тип к нижнему регистру и ищем в словаре
+        //Приводим тип к нижнему регистру и ищем в словаре
         const normalizedType = type?.toLowerCase() || '';
         const color = colors[normalizedType] || colors['default'];
-
         return L.divIcon({
             className: 'custom-marker',
             html: `<div style="
@@ -152,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const fadeElements = document.querySelectorAll('.fade-in');
-
     function checkFade() {
         fadeElements.forEach(el => {
             const rect = el.getBoundingClientRect();
@@ -166,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     checkFade();
     window.addEventListener('scroll', checkFade);
 
-    // Плавный скролл к якорям
+    //Плавный скролл к якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -180,10 +166,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Фильтрация карточек на all-sites
+    //Фильтрация карточек на all-sites
     const filterBtns = document.querySelectorAll('.filter-btn');
     const sitesGrid = document.getElementById('sites-grid');
-
     if (filterBtns.length && sitesGrid) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function() {
@@ -201,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
     function filterSites(filter) {
         const cards = document.querySelectorAll('.site-card');
         cards.forEach(card => {
@@ -215,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Поиск
+    //Поиск
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('keyup', function(e) {
@@ -224,12 +208,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     function performSearch(query) {
         query = query.toLowerCase().trim();
         if (!query) return;
 
-        // Если мы на странице all-sites.html, фильтруем карточки
+        //Если мы на странице all-sites.html, фильтруем карточки
         if (window.location.pathname.includes('all-sites.html')) {
             const cards = document.querySelectorAll('.site-card');
             let found = false;
@@ -237,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
                 const desc = card.querySelector('.site-card-description')?.textContent.toLowerCase() || '';
                 const region = card.querySelector('.site-card-region')?.textContent.toLowerCase() || '';
-
                 if (title.includes(query) || desc.includes(query) || region.includes(query)) {
                     card.style.display = 'block';
                     card.style.opacity = '1';
@@ -249,12 +231,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             if (!found) alert('Ничего не найдено. Попробуйте другое слово.');
         } else {
-            // На других страницах перенаправляем на all-sites.html с параметром
+            //На других страницах перенаправляем на all-sites.html с параметром
             window.location.href = `all-sites.html?search=${encodeURIComponent(query)}`;
         }
     }
 
-    // Обработка параметров url
+    //Обработка параметров url
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
     if (searchParam && window.location.pathname.includes('all-sites.html')) {
@@ -265,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Счетчик статистики
+    //Счетчик статистики
     const statNumbers = document.querySelectorAll('.stat-number');
     if (statNumbers.length) {
         statNumbers.forEach(stat => {
@@ -284,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Кнопка наверх
+    //Кнопка наверх
     window.onscroll = function() {
         const btn = document.getElementById('scrollTop');
         if (btn) {
@@ -316,32 +298,28 @@ document.addEventListener("DOMContentLoaded", function () {
     let translateX = 0;
     let translateY = 0;
 
-    // Drag state
     let isDragging = false;
     let dragStartX = 0;
     let dragStartY = 0;
     let dragOriginX = 0;
     let dragOriginY = 0;
 
-    // Pinch state
     let lastPinchDist = null;
 
     function applyTransform() {
         lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
     }
-
     function setZoom(newScale, centerX, centerY) {
         const prevScale = scale;
         scale = Math.min(Math.max(newScale, 0.5), 3);
 
-        // If zooming out to 1 or below, reset position
-        if (scale <= 1) { translateX = 0; translateY = 0; }
+        if (scale <= 1) 
+            { translateX = 0; translateY = 0; }
 
         zoomLabel.textContent = Math.round(scale * 100) + "%";
         lightboxImg.style.cursor = scale > 1 ? "grab" : "zoom-in";
         applyTransform();
     }
-
     function openLightbox(src) {
         lightbox.style.display = "flex";
         lightboxImg.src = src;
@@ -350,12 +328,10 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxImg.style.cursor = "zoom-in";
         applyTransform();
     }
-
     function closeLightbox() {
         lightbox.style.display = "none";
     }
 
-    // --- Gallery click ---
     document.querySelector(".detail-gallery").addEventListener("click", function (e) {
         const img = e.target.tagName === "IMG" ? e.target : e.target.querySelector("img");
         if (img && img.src) openLightbox(img.src);
@@ -363,28 +339,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeBtn.addEventListener("click", closeLightbox);
 
-    // Click backdrop to close (only when not dragging)
     lightbox.addEventListener("click", function (e) {
         if (e.target === lightbox) closeLightbox();
     });
 
-    // --- Zoom buttons ---
     zoomInBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         setZoom(scale + 0.25);
     });
+
     zoomOutBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         setZoom(scale - 0.25);
     });
 
-    // --- Scroll wheel zoom ---
     lightboxImg.addEventListener("wheel", function (e) {
         e.preventDefault();
         setZoom(scale + (e.deltaY < 0 ? 0.15 : -0.15));
     });
 
-    // --- Keyboard ---
     document.addEventListener("keydown", function (e) {
         if (lightbox.style.display !== "flex") return;
         if (e.key === "+" || e.key === "=") setZoom(scale + 0.25);
@@ -392,7 +365,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.key === "Escape") closeLightbox();
     });
 
-    // --- Mouse drag ---
     lightboxImg.addEventListener("mousedown", function (e) {
         if (scale <= 1) return;
         e.preventDefault();
@@ -417,7 +389,6 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxImg.style.cursor = scale > 1 ? "grab" : "zoom-in";
     });
 
-    // --- Touch: drag + pinch zoom ---
     lightboxImg.addEventListener("touchstart", function (e) {
         if (e.touches.length === 1 && scale > 1) {
             isDragging = true;
@@ -451,7 +422,6 @@ document.addEventListener("DOMContentLoaded", function () {
             lastPinchDist = newDist;
         }
     }, { passive: false });
-
     lightboxImg.addEventListener("touchend", function (e) {
         if (e.touches.length < 2) lastPinchDist = null;
         if (e.touches.length === 0) isDragging = false;

@@ -16,7 +16,6 @@
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -43,32 +42,24 @@
             </div>
         </div>
     </nav>
-
     <section class="detail-header">
         <div class="container">
             <h1 style="color: white;">Морозова Гора</h1>
             <p style="font-size: 1.2rem;">Памятник природы • Задонский район</p>
         </div>
     </section>
-
     <section class="detail-page">
         <div class="container">
             <div class="detail-content">
-                <!-- Левая колонка с описанием -->
                 <div class="detail-info fade-in">
                     <h2>О Морозовой Горе</h2>
                     <div style="white-space: pre-line;">
                         <p>Морозова Гора — один из шести участков заповедника «Галичья Гора», расположенный на правом берегу Дона в Задонском районе. Название, по преданию, связано с тем, что здесь когда-то останавливался на ночлег известный полководец или, по другой версии, с морозобойными трещинами в скалах.</p>
-
                         <p>Участок представляет собой высокий скалистый берег Дона с живописными обнажениями девонского известняка. Высота скал достигает 30 метров. Особую ценность представляют реликтовые кальцефильные (известняковые) сообщества растений.</p>
-
                         <p>Здесь произрастают уникальные виды, занесённые в Красную книгу: шиверекия подольская, кизильник алаунский, лён украинский, копеечник крупноцветковый. Весной скалы покрываются цветущими эфемероидами.</p>
-
                         <p>На скалах гнездятся редкие птицы: соколы-сапсаны, филины, сизоворонки, золотистые щурки. В лесу у подножия обитают лоси, кабаны, косули, лисицы, зайцы.</p>
-
                         <p>Морозова Гора — излюбленное место фотоохоты и ботанических экскурсий. Отсюда открываются великолепные виды на долину Дона.</p>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Чем заняться</h3>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                         <span class="activity-tag">Экскурсии</span>
@@ -77,7 +68,6 @@
                         <span class="activity-tag">Ботанические экскурсии</span>
                         <span class="activity-tag">Панорамные виды</span>
                     </div>
-
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
                     <div class="detail-gallery">
                         <div class="gallery-item"><img src="../img/morozovagora1.webp"></div>
@@ -85,8 +75,6 @@
                         <div class="gallery-item"><img src="../img/morozovagora3.jpg"></div>
                     </div>
                 </div>
-
-                <!-- Правая колонка с деталями -->
                 <div class="detail-sidebar fade-in">
                     <h3 style="margin-bottom: 20px;">Детали</h3>
                     <ul style="list-style: none;">
@@ -115,25 +103,19 @@
                             <strong>Окаменелости:</strong> Брахиоподы, кораллы, морские лилии
                         </li>
                     </ul>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Редкие виды</h3>
                     <p><strong>Растения:</strong> Шиверекия подольская, кизильник алаунский, лён украинский, копеечник крупноцветковый, оносма простейшая</p>
                     <p><strong>Птицы:</strong> Сапсан, филин, сизоворонка, золотистая щурка</p>
                     <p><strong>Животные:</strong> Лось, кабан, косуля, лисица</p>
-
                     <hr style="margin: 30px 0; opacity: 0.2;">
-
                     <h3 style="margin-bottom: 20px;">Как добраться</h3>
                     <p><strong>Координаты:</strong> 52.5667, 38.9000</p>
                     <p>Участок расположен в 3 км от села Каменка Задонского района. Добраться можно на автомобиле по трассе М4 «Дон» до поворота на Каменку, далее по грунтовой дороге около 2 км.</p>
                     <p>Посещение возможно только в составе экскурсионных групп по предварительной записи в администрации заповедника «Галичья Гора» (г. Задонск).</p>
-
                     <div style="background: rgba(255,255,255,0.8); border-radius: 10px; padding: 15px; margin-top: 20px;">
                         <p><strong>🌿 Лучшее время для посещения:</strong> Май-июнь — время цветения редких растений, и сентябрь — золотая осень.</p>
                     </div>
-
                     <div style="margin-top: 30px;">
                         <a href="#" onclick="history.back()" class="btn btn-primary" style="width: 100%; text-align: center;">
                             <i class="fas fa-arrow-left"></i> Назад
@@ -143,7 +125,6 @@
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -196,29 +177,24 @@
             </div>
         </div>
     </footer>
-
     <script src="../sites-data.js"></script>
     <script src="../script.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.getElementById('burger');
             const navOverlay = document.querySelector('.nav-overlay');
             const menuClose = document.querySelector('.menu-close');
-
             if (burger && navOverlay) {
                 burger.addEventListener('click', function() {
                     navOverlay.classList.toggle('nav-active');
                     burger.classList.toggle('toggle');
                 });
-
                 if (menuClose) {
                     menuClose.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');
                         burger.classList.remove('toggle');
                     });
                 }
-
                 navOverlay.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', function() {
                         navOverlay.classList.remove('nav-active');
