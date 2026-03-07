@@ -11,7 +11,6 @@
     <div class="preloader">
         <div class="loader"></div>
     </div>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
@@ -75,7 +74,7 @@
 
                     <h3 style="margin: 30px 0 20px;">Фотогалерея</h3>
                     <div class="detail-gallery">
-                        <div class="gallery-item"><img src="../img/voronovkamen1.jpg"></div>
+                        <div class="gallery-item"><img src="../img/voronovkamen1.jpg" alt="Воронов Камень 1"></div>
                         <div class="gallery-item"><img src="../img/voronovkamen2.jpg"></div>
                         <div class="gallery-item"><img src="../img/voronovkamen3.jpg"></div>
                     </div>
@@ -225,5 +224,14 @@
     <button onclick="scrollToTop()" id="scrollTop" class="scroll-top" title="Наверх">
         <i class="fas fa-arrow-up"></i>
     </button>
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-zoom-controls">
+            <button class="lightbox-zoom-btn" id="zoom-out">&#8722;</button>
+            <span class="lightbox-zoom-level" id="zoom-level">100%</span>
+            <button class="lightbox-zoom-btn" id="zoom-in">&#43;</button>
+        </div>
+        <img class="lightbox-img" id="lightbox-img">
+    </div>
 </body>
 </html>

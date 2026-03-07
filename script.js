@@ -300,3 +300,70 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const zoomInBtn = document.getElementById("zoom-in");
+    const zoomOutBtn = document.getElementById("zoom-out");
+    const zoomLabel = document.getElementById("zoom-level");
+
+    if (!lightbox) return;
+
+    let scale = 1;
+
+    function setZoom(newScale) {
+        scale = Math.min(Math.max(newScale, 0.5), 3);
+        lightboxImg.style.transform = `scale(${scale})`;
+        zoomLabel.textContent = Math.round(scale * 100) + "%";
+    }
+
+    function openLightbox(src) {
+        lightbox.style.display = "flex";
+        lightboxImg.src = src;
+        setZoom(1);
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = "none";
+        setZoom(1);
+    }
+
+    document.querySelector(".detail-gallery").addEventListener("click", function (e) {
+        const img = e.target.tagName === "IMG" ? e.target : e.target.querySelector("img");
+        if (img && img.src) openLightbox(img.src);
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    zoomInBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setZoom(scale + 0.25);
+    });
+
+    zoomOutBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setZoom(scale - 0.25);
+    });
+
+    // Scroll to zoom
+    lightboxImg.addEventListener("wheel", function (e) {
+        e.preventDefault();
+        setZoom(scale + (e.deltaY < 0 ? 0.15 : -0.15));
+    });
+
+    // Keyboard: +/- and Escape
+    document.addEventListener("keydown", function (e) {
+        if (lightbox.style.display !== "flex") return;
+        if (e.key === "+" || e.key === "=") setZoom(scale + 0.25);
+        if (e.key === "-") setZoom(scale - 0.25);
+        if (e.key === "Escape") closeLightbox();
+    });
+
+});
