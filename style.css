@@ -1836,7 +1836,7 @@ h2:hover::after {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 9000;
+    z-index: 9999;
 }
 
 .lightbox-img {
@@ -1846,17 +1846,16 @@ h2:hover::after {
 }
 
 .lightbox-close {
-    z-index: 9001;
     position: absolute;
     top: 20px;
     right: 30px;
     font-size: 40px;
     color: white;
     cursor: pointer;
+    z-index: 10001;
 }
 
 .lightbox-zoom-controls {
-    z-index: 9001;
     position: absolute;
     bottom: 25px;
     left: 50%;
@@ -1868,6 +1867,7 @@ h2:hover::after {
     backdrop-filter: blur(8px);
     border-radius: 30px;
     padding: 8px 20px;
+    z-index: 10001;
 }
 
 .lightbox-zoom-btn {
@@ -1900,6 +1900,8 @@ h2:hover::after {
 }
 
 .lightbox-img {
-    transition: transform 0.2s ease;
+    transition: transform 0.15s ease;
     cursor: zoom-in;
+    user-select: none;
+    -webkit-user-drag: none;
 }
