@@ -231,25 +231,8 @@ const sitesDatabase = [
         importance: 'регионального значения'
     },
     {
-        id: 'yeletsky-chernozem',
-        name: 'Елецкий чернозем',
-        shortName: 'Елецкий чернозем',
-        coords: [52.6167, 38.5000],
-        region: 'Елецкий район',
-        description: 'Эталонный участок чернозема, объект научных исследований.',
-        fullDescription: `Елецкий чернозем — эталонный участок мощного чернозема, объект многолетних научных исследований почвоведов. Представляет особую ценность для изучения почв.`,
-        type: 'памятник природы',
-        category: 'Памятник природы',
-        area: '10 га',
-        founded: '1980',
-        species: 'Степная растительность',
-        activities: ['Научные исследования', 'Образовательные экскурсии'],
-        howToReach: 'Окрестности города Елец. Координаты: 52.6167, 38.5000',
-        status: 'Памятник природы регионального значения',
-        importance: 'регионального значения'
-    },
-    {
         id: 'studenovsky-ovrag',
+        image: 'img/studenovskyovrag4.jpg',
         name: 'Студёновский овраг',
         shortName: 'Студёновский овраг',
         coords: [52.5833, 39.5833],
@@ -266,9 +249,9 @@ const sitesDatabase = [
         status: 'Памятник природы регионального значения',
         importance: 'регионального значения'
     },
-
     {
         id: 'kudykina-gora',
+        image: 'img/kudykinagora2.jpg',
         name: 'Кудыкина гора',
         shortName: 'Кудыкина гора',
         coords: [52.5153, 39.1025],
@@ -287,6 +270,7 @@ const sitesDatabase = [
     },
     {
         id: 'donskoe-zarechye',
+        image: 'img/donskoezarechye1.jpg',
         name: 'Донское Заречье',
         shortName: 'Донское Заречье',
         coords: [52.7167, 38.9000],
@@ -303,9 +287,9 @@ const sitesDatabase = [
         status: 'Природный парк регионального значения',
         importance: 'регионального значения'
     },
-
     {
         id: 'zadonsky-monastery',
+        image: 'img/zadonskymonastery2.jpg',
         name: 'Задонский Рождество-Богородицкий монастырь',
         shortName: 'Задонский монастырь',
         coords: [52.3903, 38.9208],
@@ -324,6 +308,7 @@ const sitesDatabase = [
     },
     {
         id: 'tyuninsky-monastery',
+        image: 'img/tyuninskymonastery4.jpg',
         name: 'Сезёновский Иоанно-Казанский монастырь',
         shortName: 'Сезёновский монастырь',
         coords: [52.9833, 38.7833],
@@ -342,6 +327,7 @@ const sitesDatabase = [
     },
     {
         id: 'troekurovsky-monastery',
+        image: 'img/troekurovskymonastery2.jpg',
         name: 'Троекуровский монастырь',
         shortName: 'Троекуровский монастырь',
         coords: [52.9833, 39.1333],
@@ -358,9 +344,9 @@ const sitesDatabase = [
         status: 'Действующий монастырь',
         importance: 'регионального значения'
     },
-
     {
         id: 'polybino',
+        image: 'img/polybino4.jpg',
         name: 'Усадьба Нечаевых в Полибино',
         shortName: 'Усадьба Полибино',
         coords: [53.0167, 38.6667],
@@ -379,6 +365,7 @@ const sitesDatabase = [
     },
     {
         id: 'usadba-stahovicha',
+        image: 'img/usadbastahovicha4.jpg',
         name: 'Усадьба Стаховича в Пальне',
         shortName: 'Усадьба Стаховича',
         coords: [52.9167, 38.9167],
@@ -397,6 +384,7 @@ const sitesDatabase = [
     },
     {
         id: 'usadba-senavina',
+        image: 'img/usadbasenavina4.jpg',
         name: 'Усадьба Сенявина',
         shortName: 'Усадьба Сенявина',
         coords: [52.9500, 39.0333],
@@ -413,9 +401,9 @@ const sitesDatabase = [
         status: 'Памятник архитектуры регионального значения',
         importance: 'регионального значения'
     },
-
     {
         id: 'argamach-pal',
+        image: 'img/argamachpal4.jpg',
         name: 'Аргамач-Пальна',
         coords: [52.6167, 38.5167],
         region: 'Елецкий район',
@@ -433,6 +421,7 @@ const sitesDatabase = [
     },
     {
         id: 'lipetskoe-gorodische',
+        image: 'img/lipetskoegorodische2.jpg',
         name: 'Липецкое городище',
         shortName: 'Липецкое городище',
         coords: [52.6167, 39.5667],
@@ -449,9 +438,9 @@ const sitesDatabase = [
         status: 'Археологический памятник',
         importance: 'федерального значения'
     },
-
     {
         id: 'petrovsky-most',
+        image: 'img/petrovskymost1.jpg',
         name: 'Петровский мост',
         shortName: 'Петровский мост',
         coords: [52.6167, 39.6000],
@@ -470,6 +459,7 @@ const sitesDatabase = [
     },
     {
         id: 'kamenny-log',
+        image: 'img/kamennylog4.jpg',
         name: 'Каменный лог',
         shortName: 'Каменный лог',
         coords: [52.5833, 39.5500],
@@ -488,6 +478,7 @@ const sitesDatabase = [
     },
     {
         id: 'svyatye-istochniki',
+        image: 'img/svyatyeistochniki4.jpg',
         name: 'Святые источники',
         shortName: 'Святые источники',
         coords: [52.5840, 38.9175],
@@ -505,7 +496,8 @@ const sitesDatabase = [
         importance: 'регионального значения'
     },
     {
-        id: 'sylycatnye_ozera',
+        id: 'sylycatnye-ozera',
+        image: 'img/sylycatnyeozera4.jpg',
         name: 'Силикатные озёра',
         shortName: 'Силикатные озёра',
         coords: [52.6029, 39.6665],
@@ -523,7 +515,8 @@ const sitesDatabase = [
         importance: 'регионального значения'
     },
     {
-        id: 'reka_dvurechka',
+        id: 'reka-dvurechka',
+        image: 'img/rekadvurechka4.jpg',
         name: 'Река Двуречка',
         shortName: 'Река Двуречка',
         coords: [52.4549, 39.6616],
@@ -541,7 +534,8 @@ const sitesDatabase = [
         importance: 'регионального значения'
     },
     {
-        id: 'nizhny_park',
+        id: 'nizhny-park',
+        image: 'img/nizhnypark4.avif',
         name: 'Нижний парк',
         shortName: 'Нижний парк',
         coords: [52.6056, 39.6012],
@@ -560,6 +554,7 @@ const sitesDatabase = [
     },
     {
         id: 'reka-don',
+        image: 'img/rekadon4.jpg',
         name: 'Река Дон',
         shortName: 'реку Дон',
         coords: [52.3915, 38.9220],
@@ -579,27 +574,8 @@ const sitesDatabase = [
         importance: 'регионального значения'
     },
     {
-        id: 'plescheevsky-les',
-        name: 'Плещеевский лес',
-        shortName: 'Плещеевский лес',
-        coords: [52.4667, 38.8833],
-        region: 'Задонский район',
-        description: 'Крупный лесной массив в Задонском районе с уникальными экосистемами.',
-        fullDescription: `Плещеевский лес — крупный лесной массив в Задонском районе Липецкой области, расположенный в долине реки Дон. Лес представляет собой смешанный массив с преобладанием широколиственных пород: дуба, липы, клёна, ясеня.
-        Особую ценность представляют старовозрастные дубравы, возраст некоторых деревьев достигает 150-200 лет. В подлеске встречаются бересклет, лещина, жимолость. Богат и животный мир: лоси, кабаны, косули, зайцы, лисы, белки.
-        Лес является излюбленным местом отдыха жителей Задонска и окрестных сёл. Здесь можно собирать грибы и ягоды, гулять, дышать свежим воздухом.`,
-        type: 'лесной',
-        category: 'Лесной массив',
-        area: '1200 га',
-        founded: '—',
-        species: 'Дуб, липа, клён, лось, кабан, косуля, белый гриб',
-        activities: ['Прогулки', 'Сбор грибов', 'Сбор ягод', 'Фотосъемка'],
-        howToReach: 'От Задонска по дороге на село Каменка (около 10 км). Координаты: 52.4667, 38.8833',
-        status: 'Особо охраняемая природная территория',
-        importance: 'регионального значения'
-    },
-    {
         id: 'skornyakovo-usadba',
+        image: 'img/skornyakovousadba1.jpg',
         name: 'Усадьба Шаховских в Скорняково',
         shortName: 'Усадьбу Шаховских',
         coords: [52.3500, 38.9167],
@@ -626,6 +602,7 @@ const sitesDatabase = [
     },
     {
         id: 'dimtriyashevka-church',
+        image: 'img/dimtriyashevkachurch1.jpg',
         name: 'Димитриевский храм в Дмитряшевке',
         shortName: 'Димитриевский храм',
         coords: [52.4167, 39.0000],
@@ -647,6 +624,7 @@ const sitesDatabase = [
     },
     {
         id: 'krasivaya-mecha',
+        image: 'img/krasivayamecha1.jpg',
         name: 'Река Красивая Меча',
         shortName: 'реку Красивая Меча',
         coords: [52.9833, 38.7833],

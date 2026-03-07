@@ -1820,3 +1820,9 @@ h2:hover::after {
 #sites-count::after {
     content: '+';
 }
+
+.site-card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
