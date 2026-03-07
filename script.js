@@ -475,7 +475,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.key === 'ArrowRight') nextImage();
     });
 
-    // Сброс зума при переключении
     function resetZoom() {
         scale = 1;
         translateX = 0;
@@ -484,7 +483,7 @@ document.addEventListener("DOMContentLoaded", function () {
         lightboxImg.style.cursor = 'zoom-in';
         applyTransform();
     }
-        // Для телефонов
+
     let touchStartX = 0;
     let touchStartY = 0;
     let touchEndX = 0;
@@ -492,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let isSwiping = false;
 
     lightboxImg.addEventListener('touchstart', function(e) {
-        if (e.touches.length === 1 && scale <= 1) { // только если не увеличино
+        if (e.touches.length === 1 && scale <= 1) {
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
             isSwiping = true;
