@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(window.map);
+        window.map.attributionControl.setPrefix(false);
         //Загружаем данные из глобальной переменной sitesDatabase
         if (typeof sitesDatabase !== 'undefined' && sitesDatabase.length) {
             addMarkers(window.map, sitesDatabase);
